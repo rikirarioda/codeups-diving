@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.title-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.title {
+  font-family: $eng-font-family;
+  font-size: rem(32);
+  font-weight: $regular;
+  line-height: 0.05em;
+
+  @include mq("md") {
+    font-size: rem(40);
+    font-weight: $regular;
+    line-height: 0.05em;
+  }
+}
+
+
+.title span {
+  color: $green;
+}
+
+.sub-title {
+  margin-top: rem(30);
+  font-size: rem(12);
+  font-weight: $regular;
+  line-height: 0.05em;
+  color: $green;
+}

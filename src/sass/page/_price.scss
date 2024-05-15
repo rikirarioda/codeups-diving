@@ -1,0 +1,138 @@
+@use "global" as *;
+
+.price {
+  margin-top: rem(80);
+  background-color: $skyblue;
+  padding: rem(14) 0 rem(70) 0;
+  width: 100%;
+  @include mq("md") {
+    margin-top: rem(140);
+    padding: rem(74) 0 rem(90) 0;
+  }
+}
+
+.price__inner.inner {
+  padding: rem(15);
+  position: relative;
+  @include mq("md") {
+    max-width: rem(1131);
+  }
+}
+
+.price__inner::before {
+  @include mq("md") {
+    content: "";
+    position: absolute;
+    width: rem(437); 
+    height: rem(201);
+    top: rem(860);
+    left: calc(50% - min(44vw, rem(620))); 
+    background-image: url(/assets/images/common/Price-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 100;
+  }
+}
+
+.price__title {
+  margin-top: rem(35);
+}
+
+.price__sub-title.sub-title {
+  margin-top: rem(33);
+  @include mq("md") {
+    margin-top: rem(35);
+  }
+}
+
+.price__body {
+  width: 100%;
+  margin-top: rem(35);
+  @include mq("md") {
+    margin-top: rem(24);
+    text-align: center;
+  }
+}
+
+.price__box {
+  width: 100%;
+  @include mq("md") {
+    display: flex;
+    flex-direction:row-reverse;
+  }
+}
+
+.price__img {
+  @include mq("md") {
+    margin-left: rem(93);
+    aspect-ratio: 492 / 746;
+    width: 100%;
+    max-width: rem(492);
+    margin-top: rem(25);
+  }
+}
+
+.price__content {
+  margin-top: rem(40);
+  width: 100%;
+  @include mq("md") {
+    margin-top: rem(1);
+  }
+}
+
+.price__item {
+  display: flex;
+  flex-direction: column;
+  margin-top: rem(-3);
+  width: 100%;
+  @include mq("md") {
+    margin-top: rem(20);
+  }
+}
+
+.price__item:not(:first-child) {
+  margin-top: rem(41);
+  @include mq("md") {
+    margin-top: rem(38);
+  }
+}
+
+
+.price__heading {
+  width: 100%;
+  font-size: rem(16);
+  font-weight: $bold;
+  color: $blue;
+  text-align: left;
+  border-bottom: 1px solid $green;
+  padding-bottom: rem(3);
+}
+
+.price__item-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(10); 
+  @include mq("md") {
+    margin-top: rem(8); 
+  }
+}
+
+.price__text,
+.price__price-menu {
+  font-size: rem(14);
+  font-weight: $regular;
+  color: $blue;
+  @include mq("md") {
+    font-size: rem(16);
+  }
+}
+
+.price__button {
+  margin-top: rem(40);
+}
+
+
+
+

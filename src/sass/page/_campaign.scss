@@ -1,0 +1,46 @@
+@use "global" as *;
+
+.campaign {
+  margin-top: rem(60);
+  width: 100%;
+  @include mq("md") {
+  margin-top: rem(137);
+  }
+}
+
+.campaign__inner.inner {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.campaign__sub-title.sub-title {
+  margin-top: rem(33);
+  @include mq("md") {
+    margin-top: rem(37);
+  }
+}
+
+.campaign__swiper-wrap {
+  margin-top: rem(34);
+  @include mq("md") {
+      margin-top: rem(40);
+  }
+}
+
+
+
+.campaign__swiper-wrapper {
+  padding: rem(4);
+}
+
+.campaign__button {
+  margin-top: rem(40);
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+
+
+
