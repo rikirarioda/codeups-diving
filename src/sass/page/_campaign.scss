@@ -1,10 +1,10 @@
 @use "global" as *;
 
 .campaign {
-  margin-top: rem(60);
+  margin-top: rem(32);
   width: 100%;
   @include mq("md") {
-  margin-top: rem(137);
+  margin-top: rem(106);
   }
 }
 
@@ -14,21 +14,12 @@
   width: 100%;
 }
 
-.campaign__sub-title.sub-title {
-  margin-top: rem(33);
-  @include mq("md") {
-    margin-top: rem(37);
-  }
-}
-
 .campaign__swiper-wrap {
   margin-top: rem(34);
   @include mq("md") {
       margin-top: rem(40);
   }
 }
-
-
 
 .campaign__swiper-wrapper {
   padding: rem(4);

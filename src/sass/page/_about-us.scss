@@ -1,97 +1,100 @@
 @use "global" as *;
 
 .about-us {
-  @include mq("md") {
-    margin: rem(140) 0;
-    height: rem(748);
-    position: relative;
+  margin-top: rem(75);
+  @include mq("md"){
+      margin-top: rem(125);
   }
 }
 
 .about-us__inner {
-  position: relative;
+  max-width: rem(600);
 }
 
-.about-us__content {
-  // position: relative;
-  margin-top: rem(90);
+.about-us__contents {
+  margin-top: rem(27);
 
-  @include mq("md") {
-    margin-top: rem(150);
+  @include mq("md"){
+      margin-top: rem(40);
+      position: relative;
   }
 }
 
-.about-us__inner::before {
+.about-us__contents::before {
   @include mq("md") {
     content: "";
     position: absolute;
     width: rem(194); 
     height: rem(181);
-    top: rem(670);
-    left: calc(50% - min(-31vw, rem(620))); 
+    bottom: -13%;
+    right: calc(50% - min(48.5vw, rem(638)));
     background-image: url(../images/common/Aboutas-icon.svg);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background-size: contain;
     z-index: 10;
   }
 }
 
-.about-us__title.title {
-  margin-top: rem(16);
-  @include mq("md") {
-    margin-top: rem(15);
+.about-us__img-wrap {
+  position: relative;
+  aspect-ratio: 1.6273;
+  @include mq("md"){
+      aspect-ratio: 1.6333;
   }
 }
 
-.about-us__sub-title.sub-title {
-  margin-top: rem(33);
-  @include mq("md") {
-    margin-top: rem(35);
-  }
+.about-us__img-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 37%;
+  z-index: 3;
+}
+
+.about-us__img-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 81%;
 }
 
 .about-us__text-body {
-  display: inline-block;
-  // @include mq("md") {
-  //   position: absolute;
-  //   max-width: rem(840);
-  //   top: 100%;
-  //   left: 55%;
-  //   transform: translate(-50%, -50%);
-  //   width: 100%;
-  //   height: 100%;
-  //   object-fit: cover;
-  // }
-}
-
-.about-us__sub-titles {
-  margin-top: rem(190);
-  margin-left: rem(-5);
-  font-size: rem(40);
-  color: $green;
-  font-weight: $regular;
-  line-height: rem(40);
-  letter-spacing: 0.05em;
-
-  @include mq("md") {
-    margin-top: rem(100);
-    margin-left: rem(209);
-    font-size: rem(80);
-    line-height: rem(99);
-    letter-spacing: 0.00em;
-    font-weight: $regular;
-    color: $white;
-    font-family: $eng-font-family;
+  margin-top: rem(45);
+  text-align: center;
+  @include mq("md"){
+      position: absolute;
+      top: 49%;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      gap: rem(40);
+      max-width: rem(840);
+      margin-right: rem(40);
+      margin-top: 0;
+      z-index: 10;
   }
 }
 
-.about-us__sub-texts {
-  margin-top: rem(24);
+.about-us__sub-titles {
+    font-size: rem(40);
+    font-weight: $regular;
+    line-height: 1;
+    font-family: $eng-font-family;
+    color: $green;
+    text-align: left;
+
+    @include mq("md") {
+      font-size: rem(80);
+      line-height: rem(90);
+      color: $white;
+    }
+  }
+
+  .about-us__sub-texts {
+  margin-top: rem(13);
   color: $green2;
   text-align: left;
   min-width: rem(345);
-  margin-left: rem(-6);
 
   @include mq("md") {
     font-size: rem(16);
@@ -99,82 +102,13 @@
     color: $white;
     width: 100%;
     max-width: rem(400);
-    margin-left: rem(40);
     text-align: left;
-    margin-top: rem(100);
-  }
-}
-
-.about-us__button-content {
-  text-align: center;
-}
-
-// .about-us__img-wrap {
-//   position: relative;
-// }
-
-.about-us__img-right {
-  position: absolute;
-  top: 16%;
-  left: 20%;
-  z-index: -1;
-  @include mq("md") {
-  position: absolute;
-    margin-left: auto;
-    width: 81%;
-    top: 35%;
-    left: 20%;
-    z-index: -5;
-  }
-}
-
-.about-us__img-right img {
-  width: 100%;
-  max-width: rem(281);
-  object-fit: cover;
-  aspect-ratio: 281 / 186;
-  @include mq("md") {
-    width: 100%;
-    max-width: rem(880);
-    aspect-ratio: 880 / 581;
-  }
-}
-
-.about-us__img-left {
-  position: absolute;
-  top: 13%;
-  left: 4%;
-  @include mq("md") {
-    position: absolute;
-    top: 20%;
-    left: 3%;
-    z-index: -1;
-  }
-}
-
-.about-us__img-left img {
-  width: 100%;
-  max-width: rem(128);
-  object-fit: cover;
-  aspect-ratio: 128 / 194;
-  @include mq("md") {
-    width: 100%;
-    min-width: rem(400);
-    aspect-ratio: 400 / 606;
-  }
-}
-
-.about-us__block {
-  @include mq("md") {
-    display: flex;
   }
 }
 
 .about-us__button {
-  margin-top: rem(48);
-
-  @include mq("md") {
-    margin-top: rem(38);
-    margin-left: rem(40);
+  margin-top: rem(50);
+  @include mq("md"){
+      margin-top: rem(40);
   }
 }

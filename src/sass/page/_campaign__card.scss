@@ -2,11 +2,9 @@
 
 .campaign__swiper-wrap {
   margin-right: calc(50% - 50vw);
+  overflow-x: clip;
 }
 
-// .campaign__swiper-wrapper {
-//   gap: rem(40);
-// }
 
 .campaign__card {
   box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
@@ -23,6 +21,11 @@
   height: 100%;
   display: block;
   background-color: $white;
+  transition: all 0.3s ease 0s;
+}
+
+.campaign__card a:hover {
+  opacity: 0.6;
 }
 
 .campaign__card-img {

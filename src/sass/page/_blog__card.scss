@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .blog__card {
-  margin-top: rem(35);
+  margin-top: rem(32);
   display: grid;
   gap: rem(39);
   grid-template-columns: repeat(1, 1fr);
@@ -17,13 +17,23 @@
   display: block;
   height: 100%;
   background-color: #fff;
+  transition: all 0.3s ease 0s;
+}
+
+.blog__card a:hover {
+  opacity: 0.6;
 }
 
 .blog-card__item {
-  width: rem(333);
   background-color: $white;
   padding: rem(16) rem(16) rem(24);
   box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
+}
+
+.voice-card__box {
+  @include mq("md") {
+    gap: rem(16);
+  }
 }
 
 .blog-card__item-img {
@@ -35,13 +45,6 @@
   aspect-ratio: 301 / 201;
   object-fit: cover;
 }
-
-// .blog-card__item-content {
-//   padding: rem(20) rem(25) rem(25);
-//   @include mq(md){
-//       padding: rem(25) rem(30) rem(30);
-//   }
-// }
 
 .blog-card__item-category {
   font-size: rem(12);
@@ -57,14 +60,12 @@
   font-size: rem(16);
   font-weight: $normal;
   line-height: 1.5;
-  margin-top: rem(4);
   padding-bottom: rem(4);
   border-bottom: 1px solid $green;
   text-align: left;
 }
 
 .blog-card__item-text {
-  margin-top: rem(15);
   font-size: rem(16);
   line-height: 1.5;
   text-align: left;
