@@ -18,7 +18,7 @@
 }
 
 
-.title span {
+.title::first-letter {
   color: $green;
 }
 

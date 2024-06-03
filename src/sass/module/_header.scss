@@ -114,14 +114,15 @@
   top: rem(0);
   left: rem(0);
   background-color: $green;
-  overflow-y: scroll; //スマホ横にした場合のスクロール
 }
 
 .drawer-menu__wrap {
   width: 100%;
   max-width: rem(500);
   margin-inline: auto;
-  height: inherit;
+  margin-top: rem(80);
+  height: calc(100% - 5rem);
+  overflow-y: auto; //スマホ横にした場合のスクロール
   @include mq(md) {
     width: fit-content;
     max-width: none;
@@ -130,7 +131,7 @@
 }
 
 .drawer-menu__list {
-  margin-top: rem(105);
+  // margin-top: rem(105);
   display: flex;
   justify-content: center;
 }

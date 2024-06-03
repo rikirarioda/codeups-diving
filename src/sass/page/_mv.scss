@@ -22,29 +22,28 @@
   object-fit: cover;
 }
 
-.mv__title-wrap,
-.mv__text {
+.mv__title-wrap {
   position: absolute;
   z-index: 10; //スライダーよりは手前にする為
-  top: 48%;
-  left: 52%;
+  top: 50%;
+  left: 50%;
   width: 100%;
-  transform: translate(-49%, -55%);
+  transform: translate(-50%, -50%);
   text-align: center;
   @include mq("md") {
     top: 50%;
     left: 50%;
     width: 100%;
-    transform: translate(-49%, -55%);
+    transform: translate(-50%, -50%);
   }
 }
 
 .mv__title {
   font-size: rem(40);
-  font-weight: $regular;
+  font-weight: $normal;
   letter-spacing: 0.5em;
   color: $white;
-  font-family: $eng-font-family;
+  font-family: $eng-second-font-family;
 
   @include mq("md") {
     font-size: rem(80);
@@ -58,11 +57,5 @@
   font-family: $eng-font-family;
   color: $white;
   text-align: center;
-  margin-top: rem(40);
-  margin-left: rem(-25);
-  @include mq("md") {
-    margin-top: rem(55);
-    margin-left: rem(-30);
-  }
 }
 

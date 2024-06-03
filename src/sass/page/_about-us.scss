@@ -107,6 +107,7 @@
 }
 
 .about-us__button {
+  text-align: center;
   margin-top: rem(50);
   @include mq("md"){
       margin-top: rem(40);

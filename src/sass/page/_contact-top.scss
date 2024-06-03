@@ -34,7 +34,7 @@
   position: relative;
   @include mq("md"){
       display: flex;
-      box-shadow: rem(0) rem(4) rem(4) rgba($color: #000, $alpha: 0.25);
+      box-shadow: rem(4) rem(4) rem(10) rem(4) rgba($color: #000, $alpha: 0.25);
       align-items: center;
       padding: rem(70) 0;
   }
@@ -72,13 +72,18 @@
 }
 
 .contact-top__title.title {
+  line-height: 1;
   font-size: rem(80);
   font-weight: $regular;
   font-family: $eng-font-family;
 }
 
+.contact-top__sub-title.sub-title {
+  line-height: 1;
+}
+
 .contact-top__sub-text {
-  margin-top: rem(15);
+  margin-top: rem(10);
   font-size: rem(14);
   font-weight: $regular;
   color: $green;
@@ -98,7 +103,7 @@
   margin-top: rem(5);
   @include mq("md"){
       margin-top: rem(24);
-      display: flex;
+  display: flex;
       gap: rem(21);
       justify-content: space-between;
   }
@@ -130,5 +135,6 @@
 }
 
 .contact-top__button {
-   margin-top: rem(40);
+  text-align: center;
+  margin-top: rem(40);
 }

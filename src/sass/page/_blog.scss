@@ -27,11 +27,7 @@
 
 .blog__inner {
   position: relative;
-  text-align: center;
   max-width: rem(600);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .blog__inner::before {
@@ -48,6 +44,12 @@
     background-size: cover;
     z-index: 100;
   }
+}
+
+.blog__content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
 .blog__title {
@@ -72,7 +74,7 @@
   }
 }
 
-.blog__title span {
+.blog__title::first-letter {
   color: $green;
   @include mq("md") {
     color: $white;
@@ -80,9 +82,9 @@
 }
 
 .blog__button {
+  text-align: center;
   margin-top: rem(40);
-
-  @include mq("md") {
-    margin-top: rem(75);
+  @include mq("md"){
+      margin-top: rem(80);
   }
 }

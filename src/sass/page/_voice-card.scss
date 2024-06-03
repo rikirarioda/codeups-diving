@@ -12,17 +12,11 @@
   }
 }
 
-.voice__card a {
-  display: block;
+.voice-card__item a {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   transition: all 0.3s ease 0s;
-}
-
-.voice__card a:hover {
-  opacity: 0.6;
-}
-
-.voice-card__item {
   width: 100%;
   background-color: $white;
   padding: rem(15) rem(16) rem(24) rem(16);
@@ -30,9 +24,12 @@
 
   @include mq("md") {
     width: 100%;
-    // max-width: rem(520);
     padding: rem(25) rem(25) rem(24);
   }
+}
+
+.voice-card__item a:hover {
+  opacity: 0.6;
 }
 
 .voice-card__box {
