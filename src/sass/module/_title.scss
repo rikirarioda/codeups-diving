@@ -10,13 +10,11 @@
   font-family: $eng-font-family;
   font-size: rem(32);
   font-weight: $regular;
-
+  color: $blue;
   @include mq("md") {
     font-size: rem(40);
-    font-weight: $regular;
   }
 }
-
 
 .title::first-letter {
   color: $green;

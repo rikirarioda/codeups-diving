@@ -25,7 +25,7 @@
       width: rem(301);
       height: rem(138);
       top: -9%;
-      right: calc(50% - min(50vw, rem(680)));
+      right: calc(50% - min(48.5vw, rem(670)));
   }
 }
 
@@ -110,6 +110,8 @@
 }
 
 .contact-top__text {
+  color: $blue;
+  font-weight: $regular;
   @include mq("md"){
       text-align: left;
   }

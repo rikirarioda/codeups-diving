@@ -40,8 +40,9 @@
 
 .mv__title {
   font-size: rem(40);
-  font-weight: $normal;
-  letter-spacing: 0.5em;
+  font-weight: $regular;
+  letter-spacing: 0.54em;
+  text-indent: 0.54em;
   color: $white;
   font-family: $eng-second-font-family;
 
@@ -53,7 +54,6 @@
 .mv__text {
   font-size: rem(20);
   font-weight: $regular;
-  letter-spacing: 0.05em;
   font-family: $eng-font-family;
   color: $white;
   text-align: center;

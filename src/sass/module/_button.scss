@@ -54,13 +54,15 @@
     display: inline-block;
     width: rem(40);
     height: rem(6);
-    background-image: url(../images/common/button-arrow1.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
+    mask-image: url(../images/common/button-arrow1.svg);
+    transition: background-color 0.3s;
+    background: $white;
+    mask-repeat: no-repeat;
+    mask-size: contain;
     margin-left: rem(8);
     margin-bottom: rem(2.5);
 }
 
 .button:hover span {
-    background-image: url(../images/common/button-arrow2.svg);
+    background: $green;
 }
