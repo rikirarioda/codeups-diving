@@ -1,4 +1,3 @@
-
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
 
   $(function () {
@@ -39,7 +38,7 @@ $(".js-hamburger").click(function () {
   const campaign_swiper = new Swiper(".js-campaign-swiper", {
     loop: true,
     spaceBetween: 24,
-    slidesPerView: "auto",
+    slidesPerView: 1.27,
     speed: 3000,
     autoplay: {
       delay: 2000,
@@ -48,6 +47,7 @@ $(".js-hamburger").click(function () {
 
     breakpoints: {
       768: {
+        slidesPerView: 3.45,
         spaceBetween: 40,
       },
     },
@@ -123,45 +123,6 @@ $(document).ready(function() {
     return false;
   });
 });
-
-
-//ローディングアニメーション
-// script.js
-window.addEventListener('load', () => {
-  const leftImage = document.querySelector('.left-image');
-  const rightImage = document.querySelector('.right-image');
-  const titleWrapper = document.querySelector('.title-wrapper');
-  const container = document.querySelector('.container');
-  const mainVisual = document.querySelector('.main-visual');
-  const header = document.querySelector('.header');
-  const loadingScreen = document.querySelector('.loading');
-
-  // 画像をスライドさせて1枚にする
-  setTimeout(() => {
-      leftImage.style.transform = 'translateX(0)';
-      rightImage.style.transform = 'translateX(0)';
-  }, 3500); // 初期タイトルフェードアウト後0.5秒後にスライド開始
-
-  // タイトルを浮き出させる
-  setTimeout(() => {
-      titleWrapper.style.opacity = 1;
-  }, 5000); // 画像が1枚になった後、1.5秒後にタイトルを表示
-
-  // 画像をフェードアウトさせてMVを表示
-  setTimeout(() => {
-      leftImage.style.opacity = 0;
-      rightImage.style.opacity = 0;
-      titleWrapper.style.opacity = 0;
-  }, 7000); // タイトル表示後、2秒後に画像とタイトルをフェードアウト
-
-  // メインビジュアルを表示し、ヘッダーを表示
-  setTimeout(() => {
-      mainVisual.classList.add('show-mv');
-      loadingScreen.style.display = 'none';
-      header.classList.remove('hidden');
-  }, 8000); // 画像とタイトルフェードアウト後、1秒後にMVを表示
-});
-
 
 
 });

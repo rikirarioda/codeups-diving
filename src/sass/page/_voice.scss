@@ -1,12 +1,5 @@
 @use "global" as *;
 
-.voice {
-  margin-top: rem(102);
-  @include mq("md") {
-    margin-top: rem(140);
-  }
-}
-
 .voice__inner {
   max-width: rem(600);
   @include mq("md") {
@@ -44,10 +37,6 @@
     background-size: cover;
     z-index: 100;
   }
-}
-
-.voice__body {
-  text-align: center;
 }
 
 .voice__button {

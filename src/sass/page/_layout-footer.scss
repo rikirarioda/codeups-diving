@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.layout-footer {
+  background: $green;
+  margin-top: rem(50);
+  padding-top: rem(50);
+  padding-bottom: rem(56);
+  padding-inline: rem(15);
+
+  @include mq(md) {
+    padding-inline: 0;
+    margin-top: rem(160);
+    padding-top: rem(82);
+    padding-bottom: rem(80);
+  }
+}

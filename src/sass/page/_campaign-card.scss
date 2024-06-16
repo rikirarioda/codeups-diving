@@ -1,22 +1,8 @@
 @use "global" as *;
 
-.campaign__swiper-wrap {
-  margin-right: calc(50% - 50vw);
-  overflow-x: clip;
-}
-
-
 .campaign__card {
-  display: flex;
-  flex-direction: column;
   box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
-    width: 100%;
-    max-width: rem(280);
-    height: auto;
-  @include mq("md") {
-    width: 100%;
-    max-width: rem(333);
-  }
+  height: auto; //文字数増えた時の下揃え
 }
 
 .campaign__card a {
@@ -31,10 +17,6 @@
   opacity: 0.6;
 }
 
-.campaign__card-img {
-  width: 100%;
-}
-
 .campaign__card-img img {
   width: 100%;
   aspect-ratio: 280 / 188;
@@ -45,9 +27,9 @@
 }
 
 .campaign__card-body {
-  flex-grow: 1;//文字数増えた時の下揃え
-  display: flex;//文字数増えた時の下揃え
-  flex-direction: column;//文字数増えた時の下揃え
+  flex-grow: 1; //文字数増えた時の下揃え
+  display: flex;  //文字数増えた時の下揃え
+  flex-direction: column; //文字数増えた時の下揃え
   padding: rem(16) rem(16) rem(18.5);
   @include mq("md") {
     padding: rem(24) rem(16) rem(40);
@@ -146,5 +128,3 @@
     margin-left: rem(25);
   }
 }
-
-

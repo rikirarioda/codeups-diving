@@ -1,12 +1,5 @@
 @use "global" as *;
 
-.about-us {
-  margin-top: rem(75);
-  @include mq("md"){
-      margin-top: rem(125);
-  }
-}
-
 .about-us__inner {
   max-width: rem(600);
 }

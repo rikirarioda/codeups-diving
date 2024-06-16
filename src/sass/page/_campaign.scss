@@ -1,28 +1,24 @@
 @use "global" as *;
 
-.campaign {
-  margin-top: rem(32);
-  width: 100%;
-  @include mq("md") {
-  margin-top: rem(106);
-  }
-}
-
 .campaign__inner.inner {
   position: relative;
   text-align: center;
   width: 100%;
 }
 
-.campaign__swiper-wrap {
+.campaign__box {
+  position: absolute;
+  top: rem(35);
+  right: rem(120);
+}
+
+.campaign-swiper {
+  margin-right: calc(50% - 50vw);
+  overflow-x: clip;
   margin-top: rem(34);
   @include mq("md") {
       margin-top: rem(40);
   }
-}
-
-.campaign__swiper-wrapper {
-  padding: rem(4);
 }
 
 .campaign__button {

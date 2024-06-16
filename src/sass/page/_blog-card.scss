@@ -1,19 +1,6 @@
 @use "global" as *;
 
-.blog__card {
-  margin-top: rem(32);
-  display: grid;
-  gap: rem(39);
-  grid-template-columns: repeat(1, 1fr);
-  @include mq(md){
-    margin-top: rem(88);
-    gap: rem(40);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.blog-card__item a {
+.blog-card {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -23,7 +10,7 @@
   box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
 }
 
-.blog-card__item a:hover {
+.blog-card:hover {
   opacity: 0.6;
 }
 

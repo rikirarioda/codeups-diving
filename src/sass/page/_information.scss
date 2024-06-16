@@ -1,16 +1,5 @@
 @use "global" as *;
 
-.information {
-  background-color: $skyblue;
-  padding: rem(83) 0 rem(85) 0;
-  margin-top: rem(69);
-  @include mq("md") {
-    background-color: $skyblue;
-    padding: rem(70) 0;
-    margin-top: rem(180);
-  }
-}
-
 .information__inner {
   max-width: rem(600);
 }

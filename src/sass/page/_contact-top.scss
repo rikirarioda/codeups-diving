@@ -1,12 +1,5 @@
 @use "global" as *;
 
-.contact-top {
-  margin-top: rem(85);
-  @include mq("md") {
-    margin-top: rem(140);
-  }
-}
-
 .contact-top__inner {
   max-width: rem(600);
 }
@@ -71,14 +64,14 @@
   }
 }
 
-.contact-top__title.title {
+.contact-top__title-main.title__main {
   line-height: 1;
   font-size: rem(80);
   font-weight: $regular;
   font-family: $eng-font-family;
 }
 
-.contact-top__sub-title.sub-title {
+.contact-top__title-sub.title__sub {
   line-height: 1;
 }
 

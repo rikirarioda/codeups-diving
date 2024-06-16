@@ -1,16 +1,5 @@
 @use "global" as *;
 
-.price {
-  margin-top: rem(80);
-  background-color: $skyblue;
-  padding: rem(35) 0 rem(80) 0;
-  width: 100%;
-  @include mq("md") {
-    margin-top: rem(140);
-    padding: rem(92) 0 rem(95) 0;
-  }
-}
-
 .price__inner {
   max-width: rem(600);
   position: relative;

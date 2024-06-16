@@ -1,14 +1,5 @@
 @use "global" as *;
 
-.blog {
-  margin-top: rem(73);
-  @include mq("md") {
-    position: relative;
-    margin-top: rem(0);
-    padding-top: rem(100);
-  }
-}
-
 .blog::before {
   @include mq("md"){
       background-image: url(../images/common/Blog-bg.jpg);
@@ -46,13 +37,7 @@
   }
 }
 
-.blog__content {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
-.blog__title {
+.title__main-blog {
   font-family: $eng-font-family;
   font-size: rem(32);
   font-weight: $regular;
@@ -64,7 +49,7 @@
   }
 }
 
-.blog__sub-title {
+.title__sub-blog {
   font-size: rem(12);
   font-weight: $regular;
   color: $green;
@@ -74,7 +59,7 @@
   }
 }
 
-.blog__title::first-letter {
+.title__main-blog::first-letter {
   color: $green;
   @include mq("md") {
     color: $white;

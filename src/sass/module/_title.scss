@@ -1,12 +1,12 @@
 @use "global" as *;
 
-.title-content {
+.title {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
 
-.title {
+.title__main {
   font-family: $eng-font-family;
   font-size: rem(32);
   font-weight: $regular;
@@ -16,11 +16,11 @@
   }
 }
 
-.title::first-letter {
+.title__main::first-letter {
   color: $green;
 }
 
-.sub-title {
+.title__sub {
   font-size: rem(12);
   font-weight: $regular;
   color: $green;
