@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.campaign__inner.inner {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.campaign__box {
+  position: absolute;
+  top: rem(35);
+  right: rem(120);
+}
+
+.campaign-swiper {
+  margin-right: calc(50% - 50vw);
+  overflow-x: clip;
+  margin-top: rem(34);
+  @include mq("md") {
+      margin-top: rem(40);
+  }
+}
+
+.campaign__button {
+  text-align: center;
+  margin-top: rem(40);
+  @include mq("md"){
+      margin-top: rem(80);
+  }
+}
+
+.campaign {
+  /* 前へ次への矢印カスタマイズ */
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+    @include mq("md") {
+      display: flex;
+      width: rem(80);
+      height: rem(80);
+      right: rem(70);
+    }
+  }
+
+  /* 前へ次への矢印カスタマイズ */
+  .swiper-button-prev::after,
+  .swiper-button-next::after {
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    width: 100%;
+    height: 100%;
+    margin: auto;
+  }
+
+  /* 前への矢印カスタマイズ */
+  .swiper-button-prev::after {
+    background-image: url(../images/common/campaign-icon2.svg);
+  }
+
+  /* 次への矢印カスタマイズ */
+  .swiper-button-next::after {
+    background-image: url(../images/common/campaign-icon1.svg);
+  }
+}

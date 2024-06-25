@@ -34,3 +34,14 @@
   }
 }
 
+.header__pc-nav {
+  height: inherit;
+  @include mq("md") {
+    display: block;
+  }
+}
+
+
+
+
+

@@ -1,12 +1,5 @@
 @use "global" as *;
 
-.header__pc-nav {
-  height: inherit;
-  @include mq("md") {
-    display: block;
-  }
-}
-
 .pc-nav__items {
   display: flex;
   justify-content: center;
