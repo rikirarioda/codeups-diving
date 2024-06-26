@@ -37,32 +37,10 @@
   }
 }
 
-.title__main-blog {
-  font-family: $eng-font-family;
-  font-size: rem(32);
-  font-weight: $regular;
-  color: $blue;
-
-  @include mq("md") {
-    font-size: rem(40);
-    color: $white;
-  }
-}
-
-.title__sub-blog {
-  font-size: rem(12);
-  font-weight: $regular;
-  color: $green;
-
-  @include mq("md") {
-    color: $white;
-  }
-}
-
-.title__main-blog::first-letter {
-  color: $green;
-  @include mq("md") {
-    color: $white;
+.blog__cards {
+  margin-top: rem(32);
+  @include mq(md){
+    margin-top: rem(88);
   }
 }
 
@@ -73,3 +51,5 @@
       margin-top: rem(80);
   }
 }
+
+

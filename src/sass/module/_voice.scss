@@ -39,6 +39,13 @@
   }
 }
 
+.voice__cards {
+  margin-top: rem(50);
+  @include mq(md){
+      margin-top: rem(40);
+  }
+}
+
 .voice__button {
   text-align: center;
   margin-top: rem(40);

@@ -25,3 +25,47 @@
   font-weight: $regular;
   color: $green;
 }
+
+
+//blog
+.title__main--blog {
+  font-family: $eng-font-family;
+  font-size: rem(32);
+  font-weight: $regular;
+  color: $blue;
+
+  @include mq("md") {
+    font-size: rem(40);
+    color: $white;
+  }
+}
+
+.title__sub--blog {
+  font-size: rem(12);
+  font-weight: $regular;
+  color: $green;
+
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.title__main--blog::first-letter {
+  color: $green;
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+
+//contact-top
+.title__main--contact-top.title__main {
+  line-height: 1;
+  font-size: rem(80);
+  font-weight: $regular;
+  font-family: $eng-font-family;
+}
+
+.title__sub--contact-top.title__sub {
+  line-height: 1;
+}
