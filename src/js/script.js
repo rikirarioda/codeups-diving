@@ -5,7 +5,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(".js-hamburger, .js-drawer").click(function () {
       $(".js-hamburger").toggleClass("is-active");
       $(".js-drawer").fadeToggle();
-      
+
     });
 
     // ウィンドウのリサイズイベント
@@ -126,5 +126,112 @@ $(document).ready(function() {
 });
 
 
+//campaign-page タブ
+//information-page タブ
+$(function () {
+  const tabButton = $(".js-tab-button"),
+    tabContent = $(".js-tab-content");
+  tabButton.on("click", function () {
+    let index = tabButton.index(this);
+
+    tabButton.removeClass("is-active");
+    $(this).addClass("is-active");
+    tabContent.removeClass("is-active");
+    tabContent.eq(index).addClass("is-active");
+  });
 });
 
+//モーダル
+$(function () {
+  const open = $(".js-modal-open .gallery__img"),
+        close = $(".js-modal__close"),
+        modal = $(".js-modal"),
+        modalImg = $(".modal__img");
+
+  // 開くボタンをクリックしたらモーダルを表示する
+  open.on("click", function () {
+    const src = $(this).attr("src");
+    modalImg.attr("src", src);
+    modal.addClass("is-open");
+  });
+
+  // 閉じるボタンをクリックしたらモーダルを閉じる
+  close.on("click", function () {
+    modal.removeClass("is-open");
+    modalImg.attr("src", "");  // モーダルを閉じたときに画像をクリアする
+  });
+
+  // モーダル自体をクリックしたらモーダルを閉じる
+  modal.on("click", function (e) {
+    if ($(e.target).is(modal)) {
+      modal.removeClass("is-open");
+      modalImg.attr("src", "");  // モーダルを閉じたときに画像をクリアする
+    }
+  });
+});
+
+//アコーディオン
+$(function () {
+  $(".js-accordion__title").on("click", function () {
+    $(this).toggleClass("is-open");
+    $(this).next().slideToggle(300);
+  });
+});
+
+
+
+function validateForm(event) {
+  event.preventDefault();
+
+  // 必須フィールドの取得
+  const nameField = document.querySelector('input[name="お名前"]');
+  const emailField = document.querySelector('input[name="メールアドレス"]');
+  const phoneField = document.querySelector('input[name="電話番号"]');
+  const messageField = document.querySelector('textarea[name="message"]');
+
+  // エラーメッセージ要素の取得
+  const errorMessage = document.getElementById('error-message');
+
+  // フィールドの値のチェック
+  let hasError = false;
+
+  if (!nameField.value.trim()) {
+    nameField.classList.add('input-error');
+    hasError = true;
+  } else {
+    nameField.classList.remove('input-error');
+  }
+
+  if (!emailField.value.trim()) {
+    emailField.classList.add('input-error');
+    hasError = true;
+  } else {
+    emailField.classList.remove('input-error');
+  }
+
+  if (!phoneField.value.trim()) {
+    phoneField.classList.add('input-error');
+    hasError = true;
+  } else {
+    phoneField.classList.remove('input-error');
+  }
+
+  if (!messageField.value.trim()) {
+    messageField.classList.add('input-error');
+    hasError = true;
+  } else {
+    messageField.classList.remove('input-error');
+  }
+
+  // エラーメッセージの表示
+  if (hasError) {
+    errorMessage.style.display = 'block';
+    return false;
+  } else {
+    errorMessage.style.display = 'none';
+    // フォームの送信
+    event.target.submit();
+  }
+}
+
+});

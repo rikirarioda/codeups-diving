@@ -11,7 +11,11 @@
 }
 
 .blog-card:hover {
-  opacity: 0.6;
+  opacity: 0.8;
+}
+
+.blog-card img:hover {
+  transform: scale(1.1);
 }
 
 .voice-card__box {
@@ -22,6 +26,7 @@
 
 .blog-card__item-img {
   width: 100%;
+  overflow: hidden;
 }
 
 .blog-card__item-img img {
@@ -54,5 +59,6 @@
   font-size: rem(16);
   line-height: 1.5;
   text-align: left;
+  margin-top: rem(16);
 }
 

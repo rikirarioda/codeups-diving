@@ -1,0 +1,36 @@
+@use "global" as *;
+
+.breadcrumb {
+  padding: rem(8) 0;
+}
+
+.breadcrumb__text {
+  font-size: rem(14);
+  font-family: $base-font-family;
+  color: $blue;
+  font-weight: $regular;
+  display: flex;
+  align-items: center;
+}
+
+.breadcrumb__text a {
+  text-decoration: none;
+  color: $blue;
+}
+
+.breadcrumb__text p {
+  margin: 0;
+}
+
+.breadcrumb__text span {
+  margin: 0 rem(4); /* スペーサーの左右に適切なマージンを設定 */
+}
+
+
+.breadcrumb__text--page404 {
+  color: $white;
+}
+
+.breadcrumb__text--page404 a {
+  color: $white;
+}

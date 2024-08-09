@@ -46,7 +46,9 @@
   border-bottom: 1px solid $green;
 }
 
+
 .contact-top__logo-wrap img {
+  margin-top: rem(25);
   display: inline-block;
   text-align: center;
 }
@@ -65,10 +67,12 @@
 }
 
 .contact-top__sub-text {
-  margin-top: rem(10);
+  margin-top: rem(6);
   font-size: rem(14);
   font-weight: $regular;
   color: $green;
+  font-family: $base-font-family;
+
   @include mq("md") {
     margin-top: rem(10);
   }
@@ -82,10 +86,9 @@
 }
 
 .contact-top__text-wrap {
-  margin-top: rem(5);
   @include mq("md"){
       margin-top: rem(24);
-  display: flex;
+      display: flex;
       gap: rem(21);
       justify-content: space-between;
   }
@@ -97,6 +100,10 @@
   @include mq("md"){
       text-align: left;
   }
+}
+
+.contact-top__text p:not(:first-child) {
+  margin-top: rem(3);
 }
 
 .contact-top__text-wrap iframe {

@@ -1,0 +1,53 @@
+@use "global" as *;
+
+.page-campaign__inner {
+  max-width: rem(600);
+  @include mq("md") {
+    position: relative;
+  }
+}
+
+.page-campaign__inner::before {
+  content: "";
+  position: absolute;
+  width: rem(120); 
+  height: rem(55);
+  background-image: url(../images/common/Voice-icon1.svg);
+  top: rem(520);
+  left: calc(53% - min(48.5vw, rem(620))); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: -10;
+  @include mq("md") {
+    left: calc(50% - min(48.5vw, rem(620))); 
+    width: rem(301);
+    height: rem(138);
+    top: rem(-70);
+  }
+}
+
+.page-campaign__contents {
+  text-align: center;
+  margin-top: rem(40);
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(1, 1fr);
+  gap: rem(40);
+
+  @include mq("md") {
+    gap: rem(40);
+    row-gap: rem(80);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.page-campaign__content {
+  max-width: rem(280);
+  box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
+
+  @include mq("md") {
+    max-width: rem(520);
+  }
+}
+

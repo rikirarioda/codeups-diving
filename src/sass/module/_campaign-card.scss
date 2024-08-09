@@ -30,9 +30,21 @@
   flex-grow: 1; //文字数増えた時の下揃え
   display: flex;  //文字数増えた時の下揃え
   flex-direction: column; //文字数増えた時の下揃え
-  padding: rem(16) rem(16) rem(18.5);
+  padding: rem(16) rem(16) rem(24);
   @include mq("md") {
     padding: rem(24) rem(16) rem(40);
+  }
+}
+
+.campaign__card-body--blog {
+  @include mq("md") {
+    padding: rem(16) rem(23) rem(24);
+  }
+}
+
+.campaign__card-body--page {
+  @include mq("md") {
+    padding: rem(24) rem(24) rem(40);
   }
 }
 
@@ -41,6 +53,12 @@
   padding-bottom: rem(8);
   border-bottom: 1px solid $green;
   text-align: left;
+}
+
+.campaign__card-meta--page {
+  @include mq("md") {
+  padding-bottom: rem(4);
+  }
 }
 
 .campaign__card-tag {
@@ -66,11 +84,27 @@
   }
 }
 
+.campaign__card-category--page {
+  @include mq("md") {
+    font-size: rem(24);
+  }
+}
+
+.campaign__card-category--blog {
+  text-align: center;
+}
+
 .campaign__card-contents {
   margin-top: rem(9);
   text-align: center;
   @include mq("md") {
     margin-top: rem(16);
+  }
+}
+
+.campaign__card-contents--page {
+  @include mq("md") {
+  margin-top: rem(30);
   }
 }
 
@@ -91,12 +125,13 @@
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-top: rem(13);
+  margin-top: rem(12);
 }
 
 .campaign__card-original--price,
 .campaign__card-discounted--price {
   font-weight: $bold;
+  font-family: $eng-second-font-family;
   line-height: 1;
   color: $blue;
 }
@@ -106,6 +141,12 @@
   position: relative;
   @include mq("md") {
     font-size: rem(24);
+  }
+}
+
+.campaign__card-original--price-blog {
+  @include mq("md") {
+  font-size: rem(20);
   }
 }
 
@@ -125,6 +166,46 @@
   margin-left: rem(17);
   @include mq("md") {
     font-size: rem(40);
-    margin-left: rem(25);
+    margin-left: rem(45);
   }
+}
+
+.campaign__card-discounted--price-blog {
+  @include mq("md") {
+    font-size: rem(32);
+    margin-left: rem(16);
+  }
+}
+
+//page-campaign
+
+.campaign__card-text {
+  font-size: rem(16);
+  font-weight: $regular;
+  color: $blue;
+  margin-top: rem(24);
+  text-align: left;
+}
+
+.campaign__card-date {
+  font-family: $eng-second-font-family;
+  font-size: rem(16);
+  font-weight: $bold;
+  color: $green;
+  margin-top: rem(25);
+}
+
+.campaign__card-contact {
+  font-size: rem(14);
+  font-weight: $regular;
+  color: $green;
+  margin-top: rem(7);
+}
+
+.campaign__card-button {
+  margin-top: rem(16);
+}
+
+.campaign__card-img.campaign__card-img--page img {
+  aspect-ratio: 294 / 188;
 }

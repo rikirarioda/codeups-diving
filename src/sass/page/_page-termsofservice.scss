@@ -1,0 +1,11 @@
+@use "global" as *;
+
+.layout-page-termsofservice {
+  margin-top: rem(42);
+  @include mq("md") {
+    margin-top: rem(140);
+  }
+}
+
+
+

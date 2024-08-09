@@ -8,8 +8,8 @@
   margin-top: rem(27);
 
   @include mq("md"){
-      margin-top: rem(40);
-      position: relative;
+    margin-top: rem(40);
+    position: relative;
   }
 }
 
@@ -104,5 +104,80 @@
   margin-top: rem(50);
   @include mq("md"){
       margin-top: rem(40);
+  }
+}
+
+//page-about
+.about-us__img-right--page {
+  width: 100%;
+  @include mq("md") {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 81%;
+  }
+}
+
+.about-us__sub-titles--page {
+  color: $white;
+  position: absolute;
+  top: 2.5%;
+  left: 6%;
+  @include mq("md") {
+    position: static; /* PC時にはabsoluteではないスタイルに戻す */
+    bottom: auto; /* absoluteを解除したため不要 */
+    right: auto; /* absoluteを解除したため不要 */
+  }
+}
+
+.about-us__sub-texts--page {
+  color: $blue;
+}
+
+.about-us__contents--page {
+  position: relative;
+  margin-top: rem(55);
+
+  @include mq("md"){
+    margin-top: rem(40);
+    position: relative;
+  }
+}
+
+.about-us__contents--page::before {
+  content: "";
+  position: absolute;
+  width: rem(120);
+  height: rem(55);
+  background-image: url(../images/common/Voice-icon1.svg);
+  top: rem(-40);
+  left: calc(50% - min(48.5vw, rem(620))); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 10;
+  @include mq("md") {
+    background-image: url(../images/common/Voice-icon1.svg);
+    width: rem(301);
+    height: rem(138);
+    top: rem(-80);
+    z-index: -10;
+  }
+}
+
+.about-us__text-body--page {
+  margin-top: rem(45);
+  text-align: center;
+  @include mq("md"){
+      position: absolute;
+      top: 44%;
+      right: 0;
+      transform: translateY(-50%);
+      display: flex;
+      gap: rem(40);
+      max-width: rem(840);
+      margin-right: rem(40);
+      margin-top: 0;
+      z-index: 10;
   }
 }

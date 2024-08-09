@@ -1,0 +1,10 @@
+@use "global" as *;
+
+.layout-page-privacypolicy {
+  margin-top: rem(42);
+  @include mq("md") {
+    margin-top: rem(163);
+  }
+}
+
+

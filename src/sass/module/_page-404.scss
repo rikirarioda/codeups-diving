@@ -1,0 +1,80 @@
+@use "global" as *;
+
+.page-404 {
+  background-color: $green;
+}
+
+.page-404__inner {
+  // margin-top: rem(30);
+  position: relative;
+  width: 100%;
+  height: inherit;
+}
+
+.page-404__content {
+  position: absolute;
+  z-index: 10; //画像より手前にする為
+  top: 44%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  @include mq("md") {
+    top: 44%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.page-404__img {
+  width: rem(345);
+  height: rem(345);
+  @include mq("md"){
+      width: rem(698);
+      height: rem(698);
+  }
+}
+
+.page-404__wraps {
+  margin-top: rem(30);
+}
+
+.page-404__title {
+  width: 100%;
+  margin-left: rem(18);
+  font-size: rem(80);
+  font-weight: $regular;
+  font-family: $eng-second-font-family;
+  color: $white;
+  letter-spacing: rem(40);
+
+  @include mq("md") {
+    font-size: rem(160);
+    letter-spacing: rem(80);
+    margin-left: rem(40);
+  }
+}
+
+.page-404__wrap {
+  margin-top: rem(-20);
+  @include mq("md") {
+    margin-top: rem(0);
+  }
+}
+
+.page-404__text {
+  font-size: rem(16);
+  font-weight: $regular;
+  font-family: $eng-second-font-family;
+  color: $white;
+}
+
+.page-404__button {
+  text-align: center;
+  margin-top: rem(40);
+
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

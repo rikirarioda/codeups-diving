@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="robots" content="noindex">
+  <!-- meta情報 -->
+  <title>CodeUps</title>
+  <meta name="description" content="沖縄県那覇市のダイビングショップです。ダイビングライセンスが取得できます。">
+  <meta name="keywords" content="ダイビング,CodeUps">
+  <!-- ogp -->
+  <meta property="og:title" content="diving">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://hogehoge.com/">
+  <meta property="og:image" content="http://hogehoge.com/images/ogp-img.jpg">
+  <meta property="og:site_name" content="diving">
+  <meta property="og:description" content="diving">
+  <!-- ファビコン -->
+  <link rel="”icon”" href="#">
+  <!-- css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js" defer></script>
+  <script src="./assets/js/script.js?" defer></script>
+  <script src="./assets/js/jquery.inview.min.js" defer></script>
+
+  <!--Google font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <h1 class="header__logo">
+        <a href="index.html" class="header__logo-link">
+          <img src="./assets/images/common/icon.svg" alt="ヘッダーロゴ">
+        </a>
+      </h1>
+      <!-- SP ハンバーガー -->
+      <button class="header__hamburger hamburger js-hamburger u-mobile">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="header__drawer-menu drawer-menu js-drawer">
+        <div class="drawer-menu__wrap">
+          <div class="drawer-menu__list">
+            <div class="drawer-menu__left">
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-campaign.html" class="drawer-menu-link__main">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">キャンペーン</p>
+                </a>
+                <div class="drawer-menu-link__details">
+                  <a href="#" class="drawer-menu-link__detail">ライセンス取得</a>
+                  <a href="#" class="drawer-menu-link__detail">貸切体験ダイビング</a>
+                  <a href="#" class="drawer-menu-link__detail">ナイトダイビング</a>
+                </div>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-about.html" class="drawer-menu-link__main">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">私たちについて</p>
+                </a>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-information.html" class="drawer-menu-link__main">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">ダイビング情報</p>
+                </a>
+                <div class="drawer-menu-link__details">
+                  <a href="#" class="drawer-menu-link__detail">ライセンス講習</a>
+                  <a href="#" class="drawer-menu-link__detail">体験ダイビング</a>
+                  <a href="#" class="drawer-menu-link__detail">ファンダイビング</a>
+                </div>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-blog.html" class="drawer-menu-link__main">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">ブログ</p>
+                </a>
+              </div>
+            </div>
+            <div class="drawer-menu__right">
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-voice.html" class="drawer-menu-link__main-right">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">お客様の声</p>
+                </a>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-price.html" class="drawer-menu-link__main-right">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">料金一覧</p>
+                </a>
+                <div class="drawer-menu-link__details">
+                  <a href="#" class="drawer-menu-link__detail">ライセンス講習</a>
+                  <a href="#" class="drawer-menu-link__detail">体験ダイビング</a>
+                  <a href="#" class="drawer-menu-link__detail">ファンダイビング</a>
+                </div>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-faq.html" class="drawer-menu-link__main-right">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">よくある質問</p>
+                </a>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-site-map.html" class="drawer-menu-link__main-right">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">サイトマップ</p>
+                </a>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-privacy-policy.html" class="drawer-menu-link__main-right">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">プライバシー<br>ポリシー</p>
+                </a>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-terms-of-service.html" class="drawer-menu-link__main-right">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">利用規約</p>
+                </a>
+              </div>
+              <div class="drawer-menu__link drawer-menu-link">
+                <a href="page-contact.html" class="drawer-menu-link__main-right">
+                  <div class="drawer-menu-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="drawer-menu-link__text">お問い合わせ</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- PC -->
+      <div class="header__pc-nav pc-nav">
+        <ul class="pc-nav__items">
+          <li class="pc-nav__item">
+            <a href="page-campaign.html">
+              <p class="pc-nav__main">Campaign</p>
+              <p class="pc-nav__sub">キャンペーン</p>
+            </a>
+          </li>
+          <li class="pc-nav__item">
+            <a href="page-about.html">
+              <p class="pc-nav__main">About&nbsp;us</p>
+              <p class="pc-nav__sub">私たちについて</p>
+            </a>
+          </li>
+          <li class="pc-nav__item">
+            <a href="page-information.html">
+              <p class="pc-nav__main">Information</p>
+              <p class="pc-nav__sub">ダイビング情報</p>
+            </a>
+          </li>
+          <li class="pc-nav__item">
+            <a href="page-blog.html">
+              <p class="pc-nav__main">Blog</p>
+              <p class="pc-nav__sub">ブログ</p>
+            </a>
+          </li>
+          <li class="pc-nav__item">
+            <a href="page-voice.html">
+              <p class="pc-nav__main">Voice</p>
+              <p class="pc-nav__sub">お客様の声</p>
+            </a>
+          </li>
+          <li class="pc-nav__item">
+            <a href="page-price.html">
+              <p class="pc-nav__main">Price</p>
+              <p class="pc-nav__sub">料金一覧</p>
+            </a>
+          </li>
+          <li class="pc-nav__item">
+            <a href="page-faq.html">
+              <p class="pc-nav__main">FAQ</p>
+              <p class="pc-nav__sub">よくある質問</p>
+            </a>
+          </li>
+          <li class="pc-nav__item">
+            <a href="page-contact.html">
+              <p class="pc-nav__main">Contact</p>
+              <p class="pc-nav__sub">お問合せ</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- メインビュー -->
+    <div class="page-mv">
+      <div class="page-mv__inner">
+        <div class="page-mv__img">
+          <picture>
+            <source srcset="./assets/images/common/Voice-p-MV-sp.jpg" media="(max-width: 767px)">
+            <img src="./assets/images/common/Voice-p-MV.jpg" alt="海の中で泳いでいる黄色い魚２尾">
+          </picture>
+          <h1 class="page-mv__title">Voice</h1>
+        </div>
+
+      </div>
+    </div>
+    
+
+    <!-- パンくず -->
+    <div class="breadcrumb">
+      <div class="breadcrumb_inner inner">
+        <div class="breadcrumb__text">
+          <a href="./index.html">TOP</a>
+          <span>&nbsp;&gt;&nbsp;</span>
+          <p>お客様の声</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- voice -->
+    <div class="page-voice layout-page-voice">
+      <div class="page-voice__inner inner">
+				<div class="page-voice__category-button category-button">
+          <div class="category-button__list">
+            <button class="category-button__tab js-tab-button is-active">ALL</button>
+            <button class="category-button__tab js-tab-button">ライセンス講習</button>
+            <button class="category-button__tab js-tab-button">ファンダイビング</button>
+            <button class="category-button__tab js-tab-button">体験ダイビング</button>
+          </div>
+
+          <ul class="page-voice__cards voice-cards">
+            <li class="voice-cards__card voice-card">
+              <a href="">
+                <div class="voice-card__item-content">
+                  <div class="voice-card__box">
+                    <div class="voice-card__items">
+                    <div class="voice-card__wrap">
+                      <p class="voice-card__item-information">20代(女性)</p>
+                      <p class="voice-card__item-tag">ライセンス講習</p>
+                    </div>
+                      <p class="voice-card__item-title">
+                          ここにタイトルが入ります。ここにタイトル
+                      </p>
+                      </div>
+                      <div class="voice-card__item-img colorbox js-colorbox">
+                          <img src="./assets/images/common/Voice-1.jpg" alt="帽子を被った女性の写真">
+                      </div>
+                  </div>
+                    <p class="voice-card__item-text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                      ここにテキストが入ります。ここにテキストが入ります。
+                    </p>
+                </div>
+              </a>
+            </li>
+            <li class="voice-cards__card voice-card">
+              <a href="">
+                <div class="voice-card__item-content">
+                  <div class="voice-card__box">
+                    <div class="voice-card__items">
+                    <div class="voice-card__wrap">
+                      <p class="voice-card__item-information">30代(男性)</p>
+                      <p class="voice-card__item-tag">ファンダイビング</p>
+                    </div>
+                      <p class="voice-card__item-title">
+                          ここにタイトルが入ります。ここにタイトル
+                      </p>
+                      </div>
+                      <div class="voice-card__item-img colorbox js-colorbox">
+                          <img src="./assets/images/common/Voice-2.jpg" alt="グットポーズをした男性の写真">
+                      </div>
+                  </div>
+                    <p class="voice-card__item-text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                      ここにテキストが入ります。ここにテキストが入ります。
+                    </p>
+                </div>
+              </a>
+            </li>
+            <li class="voice-cards__card voice-card">
+              <a href="">
+                <div class="voice-card__item-content">
+                  <div class="voice-card__box">
+                    <div class="voice-card__items">
+                    <div class="voice-card__wrap">
+                      <p class="voice-card__item-information">30代(女性)</p>
+                      <p class="voice-card__item-tag">体験ダイビング</p>
+                    </div>
+                      <p class="voice-card__item-title">
+                          ここにタイトルが入ります。ここにタイトル
+                      </p>
+                      </div>
+                      <div class="voice-card__item-img colorbox js-colorbox">
+                          <img src="./assets/images/common/Voice-p-img1.jpg" alt="グットポーズをした男性の写真">
+                      </div>
+                  </div>
+                    <p class="voice-card__item-text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                      ここにテキストが入ります。ここにテキストが入ります。
+                    </p>
+                </div>
+              </a>
+            </li>
+            <li class="voice-cards__card voice-card">
+              <a href="">
+                <div class="voice-card__item-content">
+                  <div class="voice-card__box">
+                    <div class="voice-card__items">
+                    <div class="voice-card__wrap">
+                      <p class="voice-card__item-information">20代(女性)</p>
+                      <p class="voice-card__item-tag">ファンダイビング</p>
+                    </div>
+                      <p class="voice-card__item-title">
+                          ここにタイトルが入ります。ここにタイトル
+                      </p>
+                      </div>
+                      <div class="voice-card__item-img colorbox js-colorbox">
+                          <img src="./assets/images/common/Voice-p-img2.jpg" alt="グットポーズをした男性の写真">
+                      </div>
+                  </div>
+                    <p class="voice-card__item-text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                      ここにテキストが入ります。ここにテキストが入ります。
+                    </p>
+                </div>
+              </a>
+            </li>
+            <li class="voice-cards__card voice-card">
+              <a href="">
+                <div class="voice-card__item-content">
+                  <div class="voice-card__box">
+                    <div class="voice-card__items">
+                    <div class="voice-card__wrap">
+                      <p class="voice-card__item-information">30代(カップル)</p>
+                      <p class="voice-card__item-tag">ファンダイビング</p>
+                    </div>
+                      <p class="voice-card__item-title">
+                          ここにタイトルが入ります。ここにタイトル
+                      </p>
+                      </div>
+                      <div class="voice-card__item-img colorbox js-colorbox">
+                          <img src="./assets/images/common/Voice-p-img3.jpg" alt="グットポーズをした男性の写真">
+                      </div>
+                  </div>
+                    <p class="voice-card__item-text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                      ここにテキストが入ります。ここにテキストが入ります。
+                    </p>
+                </div>
+              </a>
+            </li>
+            <li class="voice-cards__card voice-card">
+              <a href="">
+                <div class="voice-card__item-content">
+                  <div class="voice-card__box">
+                    <div class="voice-card__items">
+                    <div class="voice-card__wrap">
+                      <p class="voice-card__item-information">20代(女性)</p>
+                      <p class="voice-card__item-tag">ライセンス講習</p>
+                    </div>
+                      <p class="voice-card__item-title">
+                          ここにタイトルが入ります。ここにタイトル
+                      </p>
+                      </div>
+                      <div class="voice-card__item-img colorbox js-colorbox">
+                          <img src="./assets/images/common/Voice-p-img4.jpg" alt="グットポーズをした男性の写真">
+                      </div>
+                  </div>
+                    <p class="voice-card__item-text">
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br>
+                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
+                      ここにテキストが入ります。ここにテキストが入ります。
+                    </p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <nav class="page-campaign__pagination pagination">
+          <ul class="pagination__list">
+            <li class="pagination__item">
+              <a href="#" class="pagination__link pagination__link--prev">
+                <img src="./assets/images/common/pagination1.svg" alt="前へ">
+              </a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link is-active">1</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">2</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">3</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link">4</a>
+            </li>
+            <li class="pagination__item u-desktop">
+              <a href="#" class="pagination__link">5</a>
+            </li>
+            <li class="pagination__item">
+              <a href="#" class="pagination__link pagination__link--next">
+                <img src="./assets/images/common/pagination2.svg" alt="次へ">
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+<!-- Contact-top -->
+    <section  id="#" class="contact-top layout-contact-top">
+      <div class="contact-top__inner inner">
+        <div class="contact-top__contents">
+          <div class="contact-top__map">
+            <h3 class="contact-top__logo-wrap"><img src="./assets/images/common/icon-revers.svg" class="contact-top__logo" alt="ロゴ"></h3>
+            <div class="contact-top__text-wrap">
+              <div class="contact-top__text">
+                <p>沖縄県那覇市1-1</p>
+                <p>
+                  <a href="tel:01200000000">TEL:0120-000-0000</a>
+                </p>
+                <p>営業時間:8:30-19:00</p>
+                <p>定休日:毎週火曜日</p>
+              </div>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57272.98530030893!2d127.64350223082273!3d26.21093643736236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e5697141a6b58b%3A0x2cd8aff616585e98!2z5rKW57iE55yM6YKj6KaH5biC!5e0!3m2!1sja!2sjp!4v1714199998793!5m2!1sja!2sjp" width="295" height="160" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="contact-top__title-wrap">
+            <div class="contact-top__title">
+              <div class="title">
+                <p class="title__main title__main--contact-top">Contact</p>
+                <h2 class="title__sub title__sub--contact-top">お問い合わせ</h2>
+              </div>
+            </div>
+              <p class="contact-top__sub-text">ご予約・お問合せはコチラ</p>
+              <div class="contact-top__button">
+                <a href="#" class="button">Contact us<span></span></a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+    <a href="#" class="back-to-top js-back-to-top">
+      <img src="./assets/images/common/back-to-top.svg" alt="トップへ戻るボタン">
+    </a>
+    <footer class="footer layout-footer">
+      <div class="footer__wrap">
+        <div class="footer__icon-wrap">
+          <a href="#" class="footer__logo"><img src="./assets/images/common/icon.svg" alt="ロゴ"></a>
+          <div class="footer__sns-wrap">
+            <a href="https://www.facebook.com/" target="_blank" class="footer__sns"><img src="./assets/images/common/FacebookLogo.svg" alt="facebookのロゴ"></a>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__sns"><img src="./assets/images/common/InstagramLogo.svg" alt="instagramのロゴ"></a>
+          </div>
+        </div>
+        <div class="footer__list">
+          <div class="footer__left">
+            <div class="footer__pc">
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">キャンペーン</p>
+                </a>
+                <div class="footer-link__details">
+                  <a href="#" class="footer-link__detail">ライセンス取得</a>
+                  <a href="#" class="footer-link__detail">貸切体験ダイビング</a>
+                  <a href="#" class="footer-link__detail">ナイトダイビング</a>
+                </div>
+              </div>
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">私たちについて</p>
+                </a>
+              </div>
+            </div>
+            <div class="footer__pc">
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">ダイビング情報</p>
+                </a>
+                <div class="footer-link__details">
+                  <a href="#" class="footer-link__detail">ライセンス講習</a>
+                  <a href="#" class="footer-link__detail">体験ダイビング</a>
+                  <a href="#" class="footer-link__detail">ファンダイビング</a>
+                </div>
+              </div>
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">ブログ</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="footer__right">
+            <div class="footer__pc">
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">お客様の声</p>
+                </a>
+              </div>
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">料金一覧</p>
+                </a>
+                <div class="footer-link__details">
+                  <a href="#" class="footer-link__detail">ライセンス講習</a>
+                  <a href="#" class="footer-link__detail">体験ダイビング</a>
+                  <a href="#" class="footer-link__detail">ファンダイビング</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer__pc">
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">よくある質問</p>
+                </a>
+              </div>
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">プライバシー<br>ポリシー</p>
+                </a>
+              </div>
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">利用規約</p>
+                </a>
+              </div>
+              <div class="footer__link footer-link">
+                <a href="#" class="footer-link__main">
+                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <p class="footer-link__text">お問い合わせ</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <small class="footer__copyright">Copyright&nbsp;&copy;&nbsp;2021&nbsp;-&nbsp;2023&nbsp;CodeUps&nbsp;LLC.&nbsp;All&nbsp;Rights&nbsp;Reserved.</small>
+    </footer>
+</body>
+
+</html>

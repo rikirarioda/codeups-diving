@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.category-button__list {
+  display: grid;
+  justify-items: center; /* グリッドアイテムを中央揃え */
+  justify-content: center; /* コンテナ全体を中央揃え */
+  gap: rem(16);
+  grid-template-columns: 1fr 1fr;
+  max-width: rem(744);
+  @include mq(md){
+    gap: rem(32);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.category-button__tab {
+  font-size: rem(14);
+  font-weight: $regular;
+  color: $white;
+  padding: rem(5) rem(0);
+  background: $green;
+  cursor: pointer;
+  width: rem(162); /* 固定幅を設定 */
+  box-sizing: border-box; /* パディングを含める */
+}
+
+.category-button__tab.is-active {
+  color: $green;
+  border: 1px solid $green;
+  background: $white;
+  transition: .3s ease-in-out;
+}

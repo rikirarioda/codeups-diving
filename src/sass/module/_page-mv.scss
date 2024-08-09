@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.page-mv {
+  width: 100%;
+  height: rem(460);
+  @include mq("md"){
+      height: rem(548);
+  }
+}
+
+.page-mv__inner {
+  position: relative;
+  width: 100%;
+  height: inherit;
+}
+
+.page-mv__img,
+.page-mv__img picture,
+.page-mv__img img {
+    height: inherit;
+    object-fit: cover;
+}
+
+.page-mv__title {
+  font-family: $eng-second-font-family;
+  font-size: rem(40);
+  color: $white;
+  font-weight: $regular;
+  position: absolute;
+  z-index: 10; //画像より手前にする為
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  @include mq("md") {
+    font-size: rem(80);
+    top: 59%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+  }
+}

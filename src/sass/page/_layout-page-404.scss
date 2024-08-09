@@ -1,0 +1,16 @@
+@use "global" as *;
+
+.layout-page-404 {
+  padding-top: rem(84);
+  margin-top: rem(0);
+}
+
+
+.layout-page-404--footer {
+  margin-top: rem(0);
+  padding-top: rem(135);
+  @include mq("md") {
+    margin-top: rem(0);
+  }
+}
+

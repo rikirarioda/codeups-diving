@@ -1,0 +1,119 @@
+@use "global" as *;
+
+.page-blog-detail__inner {
+  max-width: rem(600);
+  position: relative;
+}
+
+.page-blog-detail__inner::before {
+  content: "";
+  position: absolute;
+  width: rem(120);
+  height: rem(55);
+  background-image: url(../images/common/Voice-icon1.svg);
+  top: rem(-26);
+  left: calc(50% - min(48.5vw, rem(620))); 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 10;
+  @include mq("md") {
+    background-image: url(../images/common/Voice-icon1.svg);
+    width: rem(301);
+    height: rem(138);
+    top: rem(-70);
+    z-index: -10;
+  }
+}
+
+.page-blog-detail__wraps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include mq("md") {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.page-blog-detail__category {
+  font-size: rem(14);
+  font-weight: $regular;
+  font-family: $eng-font-family;
+}
+
+.page-blog-detail__title {
+  margin-top: rem(6);
+  font-size: rem(24);
+  font-weight: $normal;
+  @include mq("md") {
+    font-size: rem(32);
+  }
+}
+
+.page-blog-detail__img {
+  margin-top: rem(24);
+
+  @include mq("md") {
+  margin-top: rem(40);
+  }
+}
+
+.page-blog-detail__img img {
+  aspect-ratio: 175 / 117;
+}
+
+
+.page-blog-detail__text {
+  margin-top: rem(25);
+  font-size: rem(16);
+  font-weight: $regular;
+
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.page-blog-detail__texts {
+  margin-top: rem(24);
+  font-size: rem(16);
+  font-weight: $regular;
+
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.page-blog-detail__wrap {
+  margin-top: rem(24);
+
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.page-blog-detail__list--wrap {
+  margin-top: rem(26);
+
+  @include mq("md") {
+    margin-top: rem(30);
+  }
+}
+
+.page-blog-detail__list {
+  font-size: rem(16);
+  font-weight: $regular;
+  display: flex;
+  align-items: center;
+}
+
+.page-blog-detail__list:not(:first-child) {
+  margin-top: rem(4);
+}
+
+.page-blog-detail__list img {
+  color: $green;
+  max-width: rem(18);
+  width: 100%;
+  margin-right: rem(9);
+}

@@ -8,7 +8,7 @@
   @include mq(md) {
     max-width: none;
     width: fit-content;
-    padding-inline: 20px;
+    padding-inline: rem(20);
   }
 }
 
@@ -86,7 +86,7 @@
   gap: rem(7);
 
   @include mq(md) {
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: rem(18);
     gap: rem(120);
   }
@@ -118,7 +118,7 @@
 }
 
 .footer-link {
-  color: #FFF;
+  color: $white;
   display: flex;
   flex-direction: column;
   gap: rem(20);

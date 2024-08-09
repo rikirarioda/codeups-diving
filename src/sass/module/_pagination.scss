@@ -1,0 +1,86 @@
+@use "global" as *;
+
+.pagination {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  margin-top: rem(89);
+  @include mq("md") {
+  margin-top: rem(90);
+  }
+}
+
+.pagination__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: rem(10);
+  @include mq("md") {
+  gap: rem(15); /* 数字同士の間隔 */
+  }
+}
+
+
+.pagination__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(38);
+  height: rem(38);
+  box-sizing: border-box;
+  font-size: rem(14);
+  color: $green;
+  text-decoration: none;
+  border: 1px solid $green;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pagination__link:hover {
+  background-color: $green;
+  color: $white;
+}
+
+.pagination__link.is-active {
+  background-color: $green;
+  color: $white;
+}
+
+/* 矢印のリンク */
+.pagination__link--prev,
+.pagination__link--next {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $green;
+  transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+/* 矢印画像のサイズを指定 */
+.pagination__link--prev img,
+.pagination__link--next img {
+  width: rem(8); /* 矢印の幅 */
+  height: rem(16); /* 矢印の高さ */
+  filter: invert(0); /* 初期状態では色を変更しない */
+}
+
+/* ホバー時に矢印画像の色を変更 */
+.pagination__link--prev:hover img,
+.pagination__link--next:hover img {
+  filter: brightness(0) invert(1) brightness(1.2); /* ホバー時に色を白にする */
+}
+
+/* 矢印と数字の間のgapを40pxに設定 */
+.pagination__link--prev {
+  margin-right: rem(15); /* 矢印と数字の間にマージン */
+}
+
+.pagination__item:last-child .pagination__link--next {
+  margin-left: rem(15); /* 矢印と数字の間にマージン */
+}
+
+
+.page-blog__pagination {
+  margin-top: rem(39);
+}
+
+
