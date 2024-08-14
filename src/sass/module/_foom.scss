@@ -66,6 +66,17 @@
     }
 }
 
+/* プレースホルダーの色を指定 */
+.form-input input::placeholder {
+  color: $skyblue; /* 希望する色コードに変更 */
+}
+
+/* テキストエリアのプレースホルダーの色を指定 */
+.form-textarea textarea::placeholder {
+  color: $skyblue; /* 希望する色コードに変更 */
+}
+
+
 .form__checkbox {
   margin-top: rem(20);
   @include mq("md") {
@@ -93,14 +104,14 @@
 	font-size: rem(15);
 	line-height: 1;
 	border-radius: 0;
-	border: 1px solid #ccc;
+	border: 1px solid $green;
 	appearance: none;
 	background-color: transparent;
 	background-image: none;
 }
 
 .form-input input:focus {
-	border: 1px solid #ccc;
+	border: 1px solid $green;
 	box-shadow: none;
 	outline: none;
 }
@@ -136,7 +147,7 @@
     left: 0;
     transform: translateY(-50%);
     background: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid $green;
     display: block;
     width: rem(15);
     height: rem(15);
@@ -168,7 +179,7 @@
     font-size: rem(12);
     line-height: 1;
     border-radius: 0;
-    border: 1px solid #ccc;
+    border: 1px solid $green;
     background-image: url(./../images/common/Contact-p.svg);
     background-repeat: no-repeat;
     background-size: rem(15);
@@ -182,7 +193,7 @@
 }
 
 .form-select select:focus {
-    border: 1px solid #ccc;
+    border: 1px solid $green;
     box-shadow: none;
 		outline: none;
 }
@@ -193,14 +204,14 @@
     height: rem(200);
     font-size: rem(15);
     border-radius: 0;
-    border: 1px solid #ccc;
+    border: 1px solid $green;
     appearance: none;
     background-color: transparent;
     background-image: none;
 }
 
 .form-textarea textarea:focus {
-    border: 1px solid #ccc;
+    border: 1px solid $green;
     box-shadow: none;
     outline: none;
 }
@@ -243,7 +254,7 @@
   left: 0;
   transform: translateY(-50%);
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid $green;
   display: block;
   width: rem(22);
   height: rem(22);
@@ -252,4 +263,20 @@
 .form__checkbox--item.form-checkbox {
   font-size: rem(14);
   letter-spacing: rem(2);
+}
+
+.form__checkbox--item input + span::after {
+  content: "";
+  margin-top: rem(-2);
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%) rotate(-35deg);
+  display: block;
+  width: rem(15);
+  height: rem(5);
+  border-bottom: rem(2.5) solid $red;
+  border-left: rem(2.5) solid $red;
+  transition:  .3s;
+  opacity: 0;
 }

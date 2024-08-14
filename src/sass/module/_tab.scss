@@ -9,6 +9,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: rem(20);
+  @include mq("md") {
+    gap: rem(90);
+  }
 }
 
 .tab__button {
@@ -31,27 +35,48 @@
   }
 }
 
-.tab__button:not(:first-child) {
-  margin-left: rem(20);
-  @include mq("md") {
-    margin-left: rem(90);
-  }
+.tab__button.is-active {
+  pointer-events: none;
 }
 
+.tab__button:hover,
 .tab__button.is-active {
-  color: #fff;
+  color: $white;
   background-color: $green;
 }
 
-.tab__button img {
+.tab__button span::before {
+  content: "";
+  display: inline-block;
+  width: rem(64);
+  aspect-ratio: 1 / 1;
+  mask-repeat: no-repeat;
+  mask-position: center center;
+  mask-size: cover;
+  background-color: $green;
+  transition: 0.3s background-color;
   margin-right: rem(8);
-  max-width: rem(64);
-  width: 100%;
-  filter: invert(0); /* 初期状態では色を変更しない */
 }
 
-.tab__button.is-active img {
-  filter: brightness(0) invert(1) brightness(1.2); /* ホバー時に色を白にする */
+.tab__button:hover span::before,
+.tab__button.is-active span::before {
+  background-color: $white;
+}
+
+.tab__example-mask--white span::before {
+  mask-image: url(../images/common/Information-p-icon1.svg);
+}
+
+.tab__example-mask--green span::before {
+  mask-image: url(../images/common/Information-p-icon2.svg);
+}
+
+.tab__example-mask--green2 span::before {
+  mask-image: url(../images/common/Information-p-icon3.svg);
+}
+
+.tab__button.is-active img{
+  background-color: $green;
 }
 
 .tab__contents {

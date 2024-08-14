@@ -18,6 +18,7 @@
 }
 
 .gallery__modal.is-open {
+  width: 100%;
   visibility: visible;
   opacity: 1;
 }
@@ -58,10 +59,11 @@
 .gallery__img {
   display: block;
   margin-top: rem(8);
+  width: 100%;
+  height: 100%;
   cursor: pointer;
   @include mq("md"){
       margin-top: 0;
-      aspect-ratio: 580 / 369;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -72,14 +74,6 @@
 .gallery__img:first-child {
   @include mq("md"){
       aspect-ratio: 746 / 492;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-  }
-}
-
-.grid__img:first-child {
-  @include mq("md"){
       grid-column: span 5;
       grid-row: span 2;
   }
@@ -87,6 +81,8 @@
 
 .gallery__img:nth-child(6n+1) {
   @include mq("md"){
+      width: 100%;
+      height: 100%;
       grid-column: span 5;
       grid-row: span 2;
   }
@@ -121,26 +117,37 @@
   }
 }
 
-#grayDisplay {
-  display: none;
+// /* 1枚目の画像に対するスタイル */
+// .gallery__img:first-child.modal__img {
+//   width: 100%; /* 幅を100%に指定 */
+//   height: auto;
+//   object-fit: cover;
+// }
+
+// /* 6枚目の画像に対するスタイル */
+// .gallery__img:nth-child(6).modal__img {
+//   width: 100%; /* 幅を100%に指定 */
+//   height: auto;
+//   object-fit: cover;
+// }
+
+// .gallery__modal.is-open .gallery__img:first-child,
+// .gallery__modal.is-open .gallery__img:nth-child(6) {
+//   width: 5%; /* 例: 幅を80%に縮小 */
+//   max-width: 100%;
+//   height: auto;
+//   object-fit: contain;
+// }
+
+
+.no-scroll {
+  overflow: hidden;
   position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  width: 100%;
-  max-width: 100%;
-  height: 100%;
-  background: rgba(32, 32, 32, 0.8);
-  z-index: 9999;
-
 }
 
-#grayDisplay img {
-  width: 80%;
-  height: 80%;
-  object-fit: contain;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-}
+
+

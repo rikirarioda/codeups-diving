@@ -5,28 +5,47 @@
   justify-items: center; /* グリッドアイテムを中央揃え */
   justify-content: center; /* コンテナ全体を中央揃え */
   gap: rem(16);
-  grid-template-columns: 1fr 1fr;
-  max-width: rem(744);
+  grid-template-columns: repeat(auto-fit, minmax(rem(162), 1fr)); //数を指定せず幅で柔軟に対応
   @include mq(md){
     gap: rem(32);
-    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 }
 
 .category-button__tab {
+  text-align: center;
   font-size: rem(14);
   font-weight: $regular;
-  color: $white;
+  color: $green;
+  background: $white;
+  border: 1px solid $green;
   padding: rem(5) rem(0);
-  background: $green;
+  cursor: pointer;
+  width: rem(162); /* 固定幅を設定 */
+  box-sizing: border-box; /* パディングを含める */
+}
+
+.category-button__tab.is-active:hover {
+  font-size: rem(14);
+  font-weight: $regular;
+  color: $green;
+  background: $white;
+  border: 1px solid $green;
+  padding: rem(5) rem(0);
   cursor: pointer;
   width: rem(162); /* 固定幅を設定 */
   box-sizing: border-box; /* パディングを含める */
 }
 
 .category-button__tab.is-active {
-  color: $green;
-  border: 1px solid $green;
-  background: $white;
+  color: $white;
+  background: $green;
   transition: .3s ease-in-out;
 }
+
+.category-button__tab:hover {
+  color: $white;
+  background: $green;
+  transition: .3s ease-in-out;
+}
+
+

@@ -2,23 +2,26 @@
 
 .contact-top__inner {
   max-width: rem(600);
+  position: relative;
 }
 
-.contact-top__contents::before {
+.contact-top__inner::before {
   content: "";
   position: absolute;
-  width: rem(109);
-  height: rem(50);
   background-image: url(../images/common/Contact-icon2.svg);
   background-repeat: no-repeat;
   background-size: contain;
-  top: -4%;
-  right: 0;
-  @include mq("md"){
-      width: rem(301);
-      height: rem(138);
-      top: -9%;
-      right: calc(50% - min(48.5vw, rem(670)));
+  width: rem(109);
+  height: rem(50);
+  right: calc(50% - min(48.5vw, rem(670))); 
+  right: -50;
+  top: 1%;
+  @include mq("md") {
+    width: rem(301);
+    height: rem(138);
+    right: calc(50% - min(48.5vw, rem(670))); 
+    right: -50;
+    top: -9%;
   }
 }
 

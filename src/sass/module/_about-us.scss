@@ -28,6 +28,21 @@
   }
 }
 
+.about-us__contents--page::before {
+    @include mq("md") {
+    content: "";
+    position: absolute;
+    width: rem(301);
+    height: rem(138);
+    bottom: -30%;
+    right: calc(50% - min(48.5vw, rem(638)));
+    background-image: url(../images/common/Contact-icon2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 10;
+  }
+}
+
 .about-us__img-wrap {
   position: relative;
   aspect-ratio: 1.6273;
@@ -132,37 +147,6 @@
 
 .about-us__sub-texts--page {
   color: $blue;
-}
-
-.about-us__contents--page {
-  position: relative;
-  margin-top: rem(55);
-
-  @include mq("md"){
-    margin-top: rem(40);
-    position: relative;
-  }
-}
-
-.about-us__contents--page::before {
-  content: "";
-  position: absolute;
-  width: rem(120);
-  height: rem(55);
-  background-image: url(../images/common/Voice-icon1.svg);
-  top: rem(-40);
-  left: calc(50% - min(48.5vw, rem(620))); 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: 10;
-  @include mq("md") {
-    background-image: url(../images/common/Voice-icon1.svg);
-    width: rem(301);
-    height: rem(138);
-    top: rem(-80);
-    z-index: -10;
-  }
 }
 
 .about-us__text-body--page {

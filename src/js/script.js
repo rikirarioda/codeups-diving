@@ -146,19 +146,27 @@ $(function () {
   const open = $(".js-modal-open .gallery__img"),
         close = $(".js-modal__close"),
         modal = $(".js-modal"),
-        modalImg = $(".modal__img");
+        modalImg = $(".modal__img"),
+        body = $("body");
+  let scrollTop;  // スクロール位置を保存する変数
 
   // 開くボタンをクリックしたらモーダルを表示する
   open.on("click", function () {
+    scrollTop = $(window).scrollTop();  // 現在のスクロール位置を保存
     const src = $(this).attr("src");
     modalImg.attr("src", src);
     modal.addClass("is-open");
+    body.addClass("no-scroll");  // モーダルを開くときに背景のスクロールを禁止する
+    body.css('top', -scrollTop);  // 現在のスクロール位置をtopに設定して背景を固定
   });
 
   // 閉じるボタンをクリックしたらモーダルを閉じる
   close.on("click", function () {
     modal.removeClass("is-open");
     modalImg.attr("src", "");  // モーダルを閉じたときに画像をクリアする
+    body.removeClass("no-scroll");  // モーダルを閉じるときに背景のスクロールを許可する
+    body.css('top', '');  // top の値をリセット
+    $(window).scrollTop(scrollTop);  // 保存したスクロール位置に戻す
   });
 
   // モーダル自体をクリックしたらモーダルを閉じる
@@ -166,9 +174,16 @@ $(function () {
     if ($(e.target).is(modal)) {
       modal.removeClass("is-open");
       modalImg.attr("src", "");  // モーダルを閉じたときに画像をクリアする
+      body.removeClass("no-scroll");  // モーダルを閉じるときに背景のスクロールを許可する
+      body.css('top', '');  // top の値をリセット
+      $(window).scrollTop(scrollTop);  // 保存したスクロール位置に戻す
     }
   });
 });
+
+
+
+
 
 //アコーディオン
 $(function () {
@@ -233,5 +248,30 @@ function validateForm(event) {
     event.target.submit();
   }
 }
+
+
+//インフォメーションページ　パラメータ
+$(function () {
+  // URLからクエリパラメータを取得する関数
+  function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+
+  // URLのパラメータから対応するIDを取得
+  const tabId = getQueryParam('tab');
+
+  // パラメータに対応するタブボタンが存在するかチェック
+  if (tabId) {
+    // すべてのタブとコンテンツからアクティブクラスを削除
+    $('.js-tab-button').removeClass('is-active');
+    $('.js-tab-content').removeClass('is-active');
+
+    // 対応するタブボタンとコンテンツにアクティブクラスを追加
+    $('#' + tabId).addClass('is-active');
+    $('#' + tabId).closest('.tab__list').next('.tab__contents').find('.js-tab-content').eq($('#' + tabId).index()).addClass('is-active');
+  }
+});
+
 
 });

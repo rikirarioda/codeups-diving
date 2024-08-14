@@ -1,29 +1,7 @@
 @use "global" as *;
 
 .page-faq__inner {
-  position: relative;
   @include mq("md") {
     max-width: rem(750);
-  }
-}
-
-.page-faq__inner::before {
-  content: "";
-  position: absolute;
-  width: rem(120); 
-  height: rem(55);
-  background-image: url(../images/common/Voice-icon1.svg);
-  top: rem(-25);
-  left: calc(50% - min(48.5vw, rem(620))); 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  z-index: 10;
-  @include mq("md") {
-    background-image: url(../images/common/Voice-icon1.svg);
-    width: rem(301);
-    height: rem(138);
-    top: rem(-70);
-    z-index: -10;
   }
 }

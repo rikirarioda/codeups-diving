@@ -1,10 +1,8 @@
 @use "global" as *;
 
-.accordion {
-  width: 100%;
-}
 
-.accordion__item:not(:first-child) {
+.accordion:not(:first-child) {
+  width: 100%;
   margin-top: rem(44);
 
   @include mq("md") {
@@ -32,29 +30,62 @@
   position: absolute;
   content: "";
   display: block;
-  width: rem(28);
-  height: rem(2);
+  width: rem(33);
+  height: rem(1);
   background-color: $white;
-  right: 15px;
+  right: 11px;
   top: 50%;
   transform: translate(0, -50%);
+  transition: 0.3s transform, 0.3s opacity;  @include mq("md") {
+    right: 40px;
+  }
 }
 
 .accordion__title.is-open::after {
-  content: " ";
+  content: "";
   position: absolute;
   background-color: #fff;
-  width: rem(2);
-  height: rem(28);
-  right: rem(28);
+  width: rem(33);
+  height: rem(1);
+  right: 11px;
   top: 50%;
   transform: translate(0, -50%);
+  @include mq("md") {
+  right: 40px;
+  }
+}
+
+/* 初期状態: 「-」アイコン */
+.accordion__title::before {
+  width: rem(33);
+  height: rem(1);
+  background-color: $white;
+  right: 11px;
+  top: 50%;
+  transform: translate(0, -50%) rotate(0deg); /* 垂直線 */
+}
+
+.accordion__title::after {
+  width: rem(33);
+  height: rem(1);
+  background-color: $white;
+  right: 11px;
+  top: 50%;
+  transform: translate(0, -50%) rotate(0deg); /* 水平線 */
+}
+
+/* アコーディオンが開いたときのスタイル */
+.accordion__title.is-open::before {
+  transform: translate(0, -50%) rotate(180deg); /* 水平線 */
+}
+
+.accordion__title.is-open::after {
+  transform: translate(0, -50%) rotate(90deg); /* 垂直線 */
 }
 
 .accordion__content {
   padding: rem(20) rem(16) rem(20);
   border: 1px solid $green;
-
   @include mq("md") {
     margin-top: rem(16);
     padding: rem(40);
