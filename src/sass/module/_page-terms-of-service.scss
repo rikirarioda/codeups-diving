@@ -6,10 +6,6 @@
   }
 }
 
-.page-termsofservice__contact {
-  margin-top: rem(41);
-}
-
 .page-termsofservice__title {
   font-size: rem(24);
   font-weight: $normal;
@@ -19,18 +15,24 @@
   }
 }
 
-.page-termsofservice__text,
-.page-termsofservice__note {
+.page-termsofservice__box {
+  margin-top: rem(40);
+}
+
+.page-termsofservice__box div {
+  margin-top: rem(32);
+}
+
+.page-termsofservice__box p,
+.page-termsofservice__box li {
   font-size: rem(16);
-  font-weight: $regular;
+  // font-weight: $normal;
   line-height: 2;
 }
 
-.page-termsofservice__note {
-  text-indent: -1em;
-  padding-left: rem(25);
+.page-termsofservice__box ol {
+  list-style: decimal;
+  padding-left: rem(22);
+  text-indent: rem(2);
 }
 
-.page-termsofservice__wrap {
-  margin-top: rem(32);
-}

@@ -241,13 +241,13 @@
 .form__checkbox--item.form-checkbox input + span {
   cursor: pointer;
   display: inline-block;
+  padding: 0 0 0 rem(36);
   position: relative;
-  padding: 0 0 0 rem(23);
   font-size: rem(15);
   line-height: 1;
 }
 
-.form__checkbox--item input + span::before {
+.form__checkbox--item.form-checkbox input + span::before {
   content: "";
   position: absolute;
   top: 50%;

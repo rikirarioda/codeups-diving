@@ -36,7 +36,22 @@
 </head>
 <body>
 
-  <header class="header">
+<!-- アーカイブトグル -->
+<script>
+function toggleMonths(yearId) {
+  const element = document.getElementById(yearId);
+  const img = element.previousElementSibling.querySelector('img');
+  if (element.classList.contains('open')) {
+    element.classList.remove('open');
+    img.src = "./assets/images/common/blog-p-archive2.svg"; // 閉じた状態のアイコン
+  } else {
+    element.classList.add('open');
+    img.src = "./assets/images/common/blog-p-archive1.svg"; // 開いた状態のアイコン
+  }
+}
+</script>
+
+  <header class="header js-header">
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="index.html" class="header__logo-link">
@@ -398,82 +413,92 @@
           </div>
 
     <!-- 人気記事 -->
-          <div class="page-blog__article">
-            <div class="page-blog__content">
-              <div class="page-blog__wrap">
-                <div class="page-blog__label"></div>
-                <div class="page-blog__title">
+          <aside class="page-blog__article article">
+            <div class="article__content">
+              <div class="article__wrap label">
+                <div class="label__title">
                   <img src="./assets/images/common/Blog-p-icon.svg" alt="クジラのアイコン">
                   <h2>人気記事</h2>
                 </div>
               </div>
-              <div class="page-blog__heading">
-                <a href="">
-                  <div class="page-blog__list">
-                    <img src="./assets/images/common/blog-p-card1.jpg" alt="黄色い魚が泳いでいる様子">
-                    <div class="page-blog__items">
-                      <time class="page-blog__item-category">2023.11/17</time>
-                      <p class="page-blog__item-title">ライセンス取得</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="page-blog__heading">
-                <a href="">
-                  <div class="page-blog__list">
-                    <img src="./assets/images/common/Blog-2.jpg" alt="黄色い魚が泳いでいる様子">
-                    <div class="page-blog__items">
-                      <time class="page-blog__item-category">2023.11/17</time>
-                      <p class="page-blog__item-title">ウミガメと泳ぐ</p>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div class="page-blog__heading">
-                <a href="">
-                  <div class="page-blog__list">
-                    <img src="./assets/images/common/blog-3.jpg" alt="黄色い魚が泳いでいる様子">
-                    <div class="page-blog__items">
-                      <time class="page-blog__item-category">2023.11/17</time>
-                      <p class="page-blog__item-title">カクレクマノミ</p>
-                    </div>
-                  </div>
-                </a>
+              <div class="article__reviews">
+                <ul class="article__contents article-cards">
+                  <li class="article-cards__card article-card">
+                    <a href="page-blog-detail.html" class="article-card__link">
+                      <div class="article-card__list">
+                        <div class="article-card__img">
+                          <img src="./assets/images/common/blog-p-card1.jpg" alt="イソギンチャク">
+                        </div>
+                        <div class="article-card__content">
+                          <time class="article-card__category">2023.11/17</time>
+                          <p class="article-card__title">ライセンス取得</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="article-cards__card article-card">
+                    <a href="page-blog-detail.html" class="article-card__link">
+                      <div class="article-card__list">
+                        <div class="article-card__img">
+                          <img src="./assets/images/common/Blog-2.jpg" alt="イソギンチャク">
+                        </div>
+                        <div class="article-card__content">
+                          <time class="article-card__category">2023.11/17</time>
+                          <p class="article-card__title">ライセンス取得</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                  <li class="article-cards__card article-card">
+                    <a href="page-blog-detail.html" class="article-card__link">
+                      <div class="article-card__list">
+                        <div class="article-card__img">
+                          <img src="./assets/images/common/Blog-3.jpg" alt="イソギンチャク">
+                        </div>
+                        <div class="article-card__content">
+                          <time class="article-card__category">2023.11/17</time>
+                          <p class="article-card__title">ライセンス取得</p>
+                        </div>
+                      </div>
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
-          <!-- 口コミ -->
-            <div class="page-blog__content">
-              <div class="page-blog__wrap">
-                <div class="page-blog__label"></div>
-                <div class="page-blog__title">
+
+            <!-- 口コミ -->
+            <div class="article__content">
+              <div class="article__wrap label">
+                <div class="label__title">
                   <img src="./assets/images/common/Blog-p-icon.svg" alt="クジラのアイコン">
                   <h2>口コミ</h2>
                 </div>
               </div>
-              <div class="page-blog__reviews">
+              <div class="article__reviews">
                 <a href="">
                   <img src="./assets/images/common/Voice-p-img3.jpg" alt="白いサンゴの写真">
-                  <div class="page-blog__item-content">
-                    <p class="page-blog__category">30代(カップル)</p>
-                    <p class="page-blog__sub-text">ここにタイトルが入ります。ここにタイトル</p>
+                  <div class="article__item-content">
+                    <p class="article__category">30代(カップル)</p>
+                    <p class="article__sub-text">ここにタイトルが入ります。ここにタイトル</p>
                   </div>
                 </a>
-                <div class="page-blog__button">
+                <div class="article__button">
                   <a href="#" class="button">View more<span></span></a>
                 </div>
               </div>
             </div>
-            <div class="page-blog__content">
-              <div class="page-blog__wrap">
-                <div class="page-blog__label"></div>
-                <div class="page-blog__title">
+
+            <!-- キャンペーン -->
+            <div class="article__content">
+              <div class="article__wrap label">
+                <div class="label__title">
                   <img src="./assets/images/common/Blog-p-icon.svg" alt="クジラのアイコン">
                   <h2>キャンペーン</h2>
                 </div>
               </div>
-            <!-- キャンペーン -->
-              <ul class="page-blog__campaign-cards campaign">
-                <li class="campaign__card page-blog--card">
+
+              <ul class="article__campaign-cards campaign">
+                <li class="campaign__card campaign__card--page">
                   <a href="#">
                     <div class="campaign__card-img campaign__card-img--page">
                       <img src="./assets/images/common/campaign1.jpg" alt="たくさんの魚が泳いでいる様子">
@@ -492,7 +517,7 @@
                     </div>
                   </a>
                 </li>
-                <li class="campaign__card page-blog--card">
+                <li class="campaign__card campaign__card--page">
                   <a href="#">
                     <div class="campaign__card-img">
                       <img src="./assets/images/common/campaign2.jpg" alt="船が出向する様子">
@@ -512,45 +537,65 @@
                   </a>
                 </li>
               </ul>
-              <div class="page-blog__button">
+              <div class="article__button">
                 <a href="#" class="button">View more<span></span></a>
               </div>
             </div>
-          <!-- アーカイブ -->
-            <div class="page-blog__content">
-              <div class="page-blog__wrap">
-                <div class="page-blog__label"></div>
-                <div class="page-blog__title">
+          
+            <!-- アーカイブ -->
+            <div class="article__content">
+              <div class="article__wrap label">
+                <div class="label__title">
                   <img src="./assets/images/common/Blog-p-icon.svg" alt="クジラのアイコン">
                   <h2>アーカイブ</h2>
                 </div>
               </div>
-              <div class="page-blog__archive">
-                  <p class="page-blog__date">
+              <div class="article__archive">
+                <div class="article__date-wrapper">
+                  <div class="article__date" onclick="toggleMonths('year-2023')">
                     <img src="./assets/images/common/blog-p-archive1.svg" alt="">
                     2023
-                  </p>
-                  <p class="page-blog__month">
-                    <img src="./assets/images/common/blog-p-archive2.svg" alt="">
-                    3月
-                  </p>
-                  <p class="page-blog__month">
-                    <img src="./assets/images/common/blog-p-archive2.svg" alt="">
-                    2月
-                  </p>
-                  <p class="page-blog__month">
-                    <img src="./assets/images/common/blog-p-archive2.svg" alt="">
-                    1月
-                  </p>
-                  <p class="page-blog__date">
+                  </div>
+                  <div class="article__months open" id="year-2023"> <!-- openクラスを追加 -->
+                    <a href="#" class="article__month">
+                      <img src="./assets/images/common/blog-p-archive2.svg" alt="">
+                      3月
+                    </a>
+                    <a href="#" class="article__month">
+                      <img src="./assets/images/common/blog-p-archive2.svg" alt="">
+                      2月
+                    </a>
+                    <a href="#" class="article__month">
+                      <img src="./assets/images/common/blog-p-archive2.svg" alt="">
+                      1月
+                    </a>
+                  </div>
+                </div>
+                <div class="article__date-wrapper">
+                  <div class="article__date" onclick="toggleMonths('year-2022')">
                     <img src="./assets/images/common/blog-p-archive2.svg" alt="">
                     2022
-                  </p>
+                  </div>
+                  <div class="article__months" id="year-2022">
+                    <a href="#" class="article__month">
+                      <img src="./assets/images/common/blog-p-archive2.svg" alt="">
+                      3月
+                    </a>
+                    <a href="#" class="article__month">
+                      <img src="./assets/images/common/blog-p-archive2.svg" alt="">
+                      2月
+                    </a>
+                    <a href="#" class="article__month">
+                      <img src="./assets/images/common/blog-p-archive2.svg" alt="">
+                      1月
+                    </a>
+                  </div>
                 </div>
+              </div>
             </div>
-          </div>
+          </aside>
         </div>
-        </div>
+      </div>
     </div>
 
 
@@ -606,7 +651,7 @@
           <div class="footer__left">
             <div class="footer__pc">
               <div class="footer__link footer-link">
-                <a href="page-c.html" class="footer-link__main">
+                <a href="page-campaign.html" class="footer-link__main">
                   <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
                   <p class="footer-link__text">キャンペーン</p>
                 </a>
@@ -630,9 +675,9 @@
                   <p class="footer-link__text">ダイビング情報</p>
                 </a>
                 <div class="footer-link__details">
-                  <a href="page-information.html?tab=ライセンス講習" class="footer-link__detail">ライセンス講習</a>
-                  <a href="page-information.html?tab=体験ダイビング" class="footer-link__detail">体験ダイビング</a>
-                  <a href="page-information.html?tab=ファンダイビング" class="footer-link__detail">ファンダイビング</a>
+                  <a href="page-information.html?tab=license-lecture" class="footer-link__detail">ライセンス講習</a>
+                  <a href="page-information.html?tab=intro-diving" class="footer-link__detail">体験ダイビング</a>
+                  <a href="page-information.html?tab=fun-diving" class="footer-link__detail">ファンダイビング</a>
                 </div>
               </div>
               <div class="footer__link footer-link">
@@ -653,13 +698,15 @@
               </div>
               <div class="footer__link footer-link">
                 <a href="page-price.html" class="footer-link__main">
-                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <div class="footer-link__icon">
+                    <img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン">
+                  </div>
                   <p class="footer-link__text">料金一覧</p>
                 </a>
                 <div class="footer-link__details">
-                  <a href="#" class="footer-link__detail">ライセンス講習</a>
-                  <a href="#" class="footer-link__detail">体験ダイビング</a>
-                  <a href="#" class="footer-link__detail">ファンダイビング</a>
+                  <a href="page-price.html#license-course" class="footer-link__detail">ライセンス講習</a>
+                  <a href="page-price.html#trial-diving" class="footer-link__detail">体験ダイビング</a>
+                  <a href="page-price.html#diving-fun" class="footer-link__detail">ファンダイビング</a>                  
                 </div>
               </div>
             </div>

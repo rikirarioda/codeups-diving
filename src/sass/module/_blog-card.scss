@@ -33,6 +33,7 @@
   width: 100%;
   aspect-ratio: 301 / 201;
   object-fit: cover;
+  transition: transform 0.6s ease;
 }
 
 .blog-card__item-category {

@@ -6,31 +6,35 @@
   }
 }
 
-.page-privacypolicy__contact {
-  margin-top: rem(41);
-}
-
 .page-privacypolicy__title {
   font-size: rem(24);
-  font-weight: $normal;
+  font-weight: $regular;
+  color: $blue;
+  font-family: $base-font-family;
 
   @include mq("md") {
     font-size: rem(32);
   }
 }
 
-.page-privacypolicy__text,
-.page-privacypolicy__note {
+.page-privacypolicy__box {
+  margin-top: rem(40);
+}
+
+.page-privacypolicy__box div {
+  margin-top: rem(32);
+}
+
+.page-privacypolicy__box p,
+.page-privacypolicy__box li {
   font-size: rem(16);
-  font-weight: $regular;
+  // font-weight: $normal;
   line-height: 2;
 }
 
-.page-privacypolicy__note {
-  text-indent: -1em;
-  padding-left: rem(25);
-}
-
-.page-privacypolicy__wrap {
-  margin-top: rem(32);
+.page-privacypolicy__box ul,
+.page-privacypolicy__box ol {
+  list-style: decimal;
+  padding-left: rem(22);
+  text-indent: rem(2);
 }

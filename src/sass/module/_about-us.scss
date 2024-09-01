@@ -2,18 +2,12 @@
 
 .about-us__inner {
   max-width: rem(600);
-}
-
-.about-us__contents {
-  margin-top: rem(27);
-
-  @include mq("md"){
-    margin-top: rem(40);
+  @include mq("md") {
     position: relative;
   }
 }
 
-.about-us__contents::before {
+.about-us__inner::before {
   @include mq("md") {
     content: "";
     position: absolute;
@@ -28,18 +22,11 @@
   }
 }
 
-.about-us__contents--page::before {
-    @include mq("md") {
-    content: "";
-    position: absolute;
-    width: rem(301);
-    height: rem(138);
-    bottom: -30%;
-    right: calc(50% - min(48.5vw, rem(638)));
-    background-image: url(../images/common/Contact-icon2.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 10;
+.about-us__contents {
+  margin-top: rem(27);
+
+  @include mq("md"){
+    margin-top: rem(40);
   }
 }
 
@@ -71,7 +58,7 @@
   text-align: center;
   @include mq("md"){
       position: absolute;
-      top: 49%;
+      top: 55%;
       right: 0;
       transform: translateY(-50%);
       display: flex;
@@ -123,6 +110,11 @@
 }
 
 //page-about
+
+.about-us__contents.about-us__contents--page {
+  margin-top: rem(0);
+}
+
 .about-us__img-right--page {
   width: 100%;
   @include mq("md") {

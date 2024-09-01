@@ -16,6 +16,7 @@
 }
 
 .tab__button {
+  transition: 0.3s background-color;
   width: rem(102);
   padding: rem(9) rem(0);
   cursor: pointer;
@@ -54,7 +55,7 @@
   mask-position: center center;
   mask-size: cover;
   background-color: $green;
-  transition: 0.3s background-color;
+  // transition: 0.3s background-color;
   margin-right: rem(8);
 }
 

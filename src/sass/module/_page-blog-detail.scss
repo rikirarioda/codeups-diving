@@ -1,21 +1,5 @@
 @use "global" as *;
 
-.page-blog-detail__wraps {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  @include mq("md") {
-    flex-direction: row;
-    align-items: flex-start;
-  }
-}
-
-.page-blog-detail__category {
-  font-size: rem(14);
-  font-weight: $regular;
-  font-family: $eng-font-family;
-}
-
 .page-blog-detail__title {
   border-bottom: rem(1) solid $green;
   margin-top: rem(6);
@@ -38,7 +22,7 @@
   aspect-ratio: 175 / 117;
 }
 
-.page-blog-container--detail p {
+.page-blog-detail__container p {
   margin-top: rem(25);
   font-size: rem(16);
   font-weight: $regular;
@@ -48,35 +32,46 @@
   }
 }
 
-.page-blog-container--detail ul {
+.page-blog-detail__container img {
+  aspect-ratio: 175 / 117;
+  margin-top: rem(24);
+
+  @include mq("md") {
+  margin-top: rem(40);
+  }
+}
+
+.page-blog-detail__container ul {
   margin-top: rem(26);
+
 
   @include mq("md") {
     margin-top: rem(30);
   }
 }
 
-.page-blog-container--detail li {
-  font-size: rem(16);
-  font-weight: $regular;
-  display: flex;
-  justify-content: flex-start;
-}
 
-.page-blog-container--detail li:not(:first-child) {
+.page-blog-detail__container li:not(:first-child) {
   margin-top: rem(4);
 }
 
-.page-blog-container--detail li::before {
-  display: block;
-  content: url(../images/common/hitode2.svg);
-  max-width: rem(18);
-  margin-right: rem(9);
+.page-blog-detail__container li {
+  display: block; /* リストアイテムをブロック要素に設定 */
+  position: relative; /* ::beforeの絶対配置の基準にするために相対配置を設定 */
+  padding-left: rem(27); /* 左側にアイコンのスペースを確保 */
+  font-size: rem(16);
+  font-weight: $regular;
+  margin-top: rem(4);
 }
 
-.page-blog-detail__list img {
-  color: $green;
-  max-width: rem(18);
-  width: 100%;
-  margin-right: rem(9);
+.page-blog-detail__container li::before {
+  content: url(../images/common/hitode2.svg);
+  display: block; /* ブロック要素として表示 */
+  position: absolute; /* 絶対配置で親要素に固定 */
+  top: 0; /* リストアイテムの上端に揃える */
+  left: 0; /* リストアイテムの左端に揃える */
+  width: rem(18); /* 固定幅 */
+  height: rem(18); /* 固定高さ */
+  margin-top: rem(4); /* アイコンとテキストの間に少し余白を追加 */
 }
+

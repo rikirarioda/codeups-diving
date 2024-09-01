@@ -141,42 +141,109 @@ $(function () {
   });
 });
 
+
 //モーダル
+
+// $(function () {
+//   const open = $(".js-modal-open"),
+//         close = $(".js-modal__close"),
+//         modal = $(".js-modal"),
+//         modalImg = $(".js-modal-img"),
+//         body = $("body");
+
+//   let scrollPosition = 0;  // スクロール位置を保持する変数
+
+//   open.on("click", function () {
+//     scrollPosition = $(window).scrollTop();  // 現在のスクロール位置を保存
+//     const imgSrc = $(this).data("img-src");  // クリックされた画像のsrcを取得
+//     modalImg.attr("src", imgSrc);  // モーダル内の画像srcを更新
+
+//     // モーダル内の画像サイズをウィンドウサイズに応じて調整
+//     const windowHeight = $(window).height();
+//     const windowWidth = $(window).width();
+//     modalImg.css({
+//       'max-height': windowHeight * 0.9 + 'px',  // ウィンドウ高さの90%に制限
+//       'max-width': windowWidth * 0.9 + 'px'    // ウィンドウ幅の90%に制限
+//     });
+
+//     modal.addClass("is-open");  // モーダルを開く
+
+//     // 背景スクロールを無効化
+//     body.css({
+//       overflow: 'hidden',
+//       position: 'relative',
+//       top: -scrollPosition + 'px'
+//     });
+//   });
+
+//   close.add(modal).on("click", function () {
+//     modal.removeClass("is-open");  // モーダルを閉じる
+
+//     // 背景スクロールを有効化し、スクロール位置を元に戻す
+//     body.css({
+//       overflow: '',
+//       position: '',
+//       top: ''
+//     });
+//     $(window).scrollTop(scrollPosition);  // 元のスクロール位置に戻す
+//   });
+  
+// });
+
 $(function () {
-  const open = $(".js-modal-open .gallery__img"),
-        close = $(".js-modal__close"),
+  const open = $(".js-modal-open"),
+        close = $(".js-modal-close"),
         modal = $(".js-modal"),
-        modalImg = $(".modal__img"),
+        modalImg = $(".js-modal-img"),
         body = $("body");
-  let scrollTop;  // スクロール位置を保存する変数
 
-  // 開くボタンをクリックしたらモーダルを表示する
+  let scrollPosition = 0;  // スクロール位置を保持する変数
+
   open.on("click", function () {
-    scrollTop = $(window).scrollTop();  // 現在のスクロール位置を保存
-    const src = $(this).attr("src");
-    modalImg.attr("src", src);
-    modal.addClass("is-open");
-    body.addClass("no-scroll");  // モーダルを開くときに背景のスクロールを禁止する
-    body.css('top', -scrollTop);  // 現在のスクロール位置をtopに設定して背景を固定
+    scrollPosition = $(window).scrollTop();  // 現在のスクロール位置を保存
+    const imgSrc = $(this).data("img-src");  // クリックされた画像のsrcを取得
+    modalImg.attr("src", imgSrc);  // モーダル内の画像srcを更新
+
+    // モーダル内の画像サイズをウィンドウサイズに応じて調整
+    const windowHeight = $(window).height();
+    const windowWidth = $(window).width();
+    modalImg.css({
+      'max-height': windowHeight * 0.9 + 'px',  // ウィンドウ高さの90%に制限
+      'max-width': windowWidth * 0.9 + 'px'    // ウィンドウ幅の90%に制限
+    });
+
+    modal.addClass("is-open");  // モーダルを開く
+
+    // 背景スクロールを無効化
+    body.css({
+      overflow: 'hidden',
+      position: 'relative',
+      top: -scrollPosition + 'px'
+    });
   });
 
-  // 閉じるボタンをクリックしたらモーダルを閉じる
-  close.on("click", function () {
-    modal.removeClass("is-open");
-    modalImg.attr("src", "");  // モーダルを閉じたときに画像をクリアする
-    body.removeClass("no-scroll");  // モーダルを閉じるときに背景のスクロールを許可する
-    body.css('top', '');  // top の値をリセット
-    $(window).scrollTop(scrollTop);  // 保存したスクロール位置に戻す
+  close.add(modal).on("click", function () {
+    modal.removeClass("is-open");  // モーダルを閉じる
+
+    // 背景スクロールを有効化し、スクロール位置を元に戻す
+    body.css({
+      overflow: '',
+      position: '',
+      top: ''
+    });
+    $(window).scrollTop(scrollPosition);  // 元のスクロール位置に戻す
   });
 
-  // モーダル自体をクリックしたらモーダルを閉じる
+  // 追加部分: モーダルをクリックして閉じる処理
   modal.on("click", function (e) {
-    if ($(e.target).is(modal)) {
+    if (e.target === modal[0]) {  // モーダルの外側をクリックしたかどうかをチェック
       modal.removeClass("is-open");
-      modalImg.attr("src", "");  // モーダルを閉じたときに画像をクリアする
-      body.removeClass("no-scroll");  // モーダルを閉じるときに背景のスクロールを許可する
-      body.css('top', '');  // top の値をリセット
-      $(window).scrollTop(scrollTop);  // 保存したスクロール位置に戻す
+      body.css({
+        overflow: '',
+        position: '',
+        top: ''
+      });
+      $(window).scrollTop(scrollPosition);  // 元のスクロール位置に戻す
     }
   });
 });
@@ -184,10 +251,9 @@ $(function () {
 
 
 
-
 //アコーディオン
 $(function () {
-  $(".js-accordion__title").on("click", function () {
+  $(".js-accordion-title").on("click", function () {
     $(this).toggleClass("is-open");
     $(this).next().slideToggle(300);
   });
@@ -274,4 +340,42 @@ $(function () {
 });
 
 
+//別ページに飛ぶ　料金一覧ページ
+$(window).on('load', function() {
+  // ページが読み込まれたときに、URLにハッシュがあるかチェック
+  if (window.location.hash) {
+    const headerHeight = $(".js-header").height(); // ヘッダーの高さを取得
+    const target = $(window.location.hash); // ハッシュのターゲット要素を取得
+
+    if (target.length) {
+      const position = target.offset().top - headerHeight; // ヘッダーの高さを引いて位置を調整
+      $("html, body").animate({ scrollTop: position }, 0); // ページをスクロール位置に移動
+    }
+  }
+
+  // 同じページ内のリンクをクリックしたときの処理
+  $('a[href^="#"]').click(function () {
+    const headerHeight = $(".js-header").height();
+    const speed = 600;
+    let href = $(this).attr("href");
+    let target = $(href == "#" || href == "" ? "html" : href);
+
+    // ヘッダーの高さ分下げる
+    let position = target.offset().top - headerHeight;
+    $("body,html").animate({ scrollTop: position }, speed, "swing");
+    return false;
+  });
 });
+
+
+
+
+
+});
+
+
+
+
+
+
+

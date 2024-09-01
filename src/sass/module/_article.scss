@@ -1,0 +1,97 @@
+@use "global" as *;
+
+//人気記事
+.article {
+  max-width: rem(294);
+  @include mq("md") {
+    margin-left: rem(80);
+  }
+}
+
+.article__content {
+  margin-top: rem(83);
+  min-width: rem(294);
+}
+
+.article__content:first-child {
+  @include mq("md") {
+  margin-top: rem(0);
+  }
+}
+
+.article-cards__card:not(:first-child) {
+  margin-top: rem(24);
+}
+
+//口コミ
+.article__reviews {
+  margin-top: rem(20);
+}
+
+.article__reviews img {
+  aspect-ratio: 294 / 218;
+}
+
+.article__category {
+  margin-top: rem(16);
+  font-size: rem(12);
+  color: $blue;
+}
+
+.article__sub-text {
+  margin-top: rem(8);
+  font-size: rem(24);
+  color: $blue;
+}
+
+.article__button {
+  margin-top: rem(40);
+  text-align: center;
+}
+
+
+//キャンペーン
+.article__archive {
+  margin-top: rem(30);
+}
+
+.article__date,
+.article__month {
+  font-size: rem(24);
+  color: $green;
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* クリック可能に見せるためのカーソル */
+}
+
+.article__date img {
+  width: rem(24);
+  margin-right: rem(6);
+  transition: transform 0.3s ease; /* アニメーションを追加 */
+}
+
+.article__date-wrapper {
+  margin-bottom: rem(10);
+}
+
+.article__months {
+  max-height: 0; /* 初期状態で隠す */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out; /* トグルの開閉時にアニメーションを適用 */
+  padding: 0;  /* 初期状態でのpaddingを0に */
+  margin: 0;   /* 初期状態でのmarginを0に */
+  // transition: max-height 0.5s ease; /* 高さのトランジション */
+}
+
+.article__months.open {
+  max-height: 500px; /* 開いたときに十分な高さを設定 */
+}
+
+.article__month {
+  margin-left: rem(30);
+}
+
+.article__month img {
+  width: rem(20);
+  margin-right: rem(6);
+}

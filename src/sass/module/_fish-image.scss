@@ -15,12 +15,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  z-index: -10;
+  z-index: 10;
   @include mq("md") {
     left: calc(50% - min(48.5vw, rem(620))); 
     width: rem(301);
     height: rem(138);
     top: rem(-70);
+    z-index: -10;
   }
 }
 

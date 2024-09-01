@@ -4,14 +4,20 @@
   display: grid;
   justify-items: center; /* グリッドアイテムを中央揃え */
   justify-content: center; /* コンテナ全体を中央揃え */
-  gap: rem(16);
-  grid-template-columns: repeat(auto-fit, minmax(rem(162), 1fr)); //数を指定せず幅で柔軟に対応
+  column-gap: rem(16);
+  row-gap: rem(21);
+  grid-template-columns: repeat(auto-fill, minmax(rem(162), 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(rem(162), 1fr)); //数を指定せず幅で柔軟に対応
+
   @include mq(md){
-    gap: rem(32);
+    justify-items: flex-start; /* グリッドアイテムを左揃え */
+    justify-content: flex-start; /* グリッドコンテナ全体を左揃え */
+    row-gap: rem(32);
   }
 }
 
 .category-button__tab {
+  transition: .3s ease-in-out;
   text-align: center;
   font-size: rem(14);
   font-weight: $regular;
@@ -22,6 +28,7 @@
   cursor: pointer;
   width: rem(162); /* 固定幅を設定 */
   box-sizing: border-box; /* パディングを含める */
+  margin: 0; /* マージンをリセット */
 }
 
 .category-button__tab.is-active:hover {
@@ -39,13 +46,13 @@
 .category-button__tab.is-active {
   color: $white;
   background: $green;
-  transition: .3s ease-in-out;
+  // transition: .3s ease-in-out;
 }
 
 .category-button__tab:hover {
   color: $white;
   background: $green;
-  transition: .3s ease-in-out;
+  // transition: .3s ease-in-out;
 }
 
 

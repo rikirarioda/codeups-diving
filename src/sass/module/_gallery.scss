@@ -1,28 +1,5 @@
 @use "global" as *;
 
-.gallery__modal {
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  display: flex;
-  visibility: hidden;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  padding: rem(40) rem(20);
-  transition: opacity 0.3s, visibility 0.3s;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-.gallery__modal.is-open {
-  width: 100%;
-  visibility: visible;
-  opacity: 1;
-}
-
 .gallery__inner {
   max-width: rem(600);
   @include mq("md"){
@@ -30,21 +7,24 @@
   }
 }
 
+
 .gallery__inner::before {
   @include mq("md"){
       content: "";
       position: absolute;
-      background-image: url(../images/common/fish-left.svg);
+      background-image: url(../images/common/gallery-icon.jpg);
       background-repeat: no-repeat;
       background-size: contain;
       width: rem(301);
       height: rem(138);
-      top: -5%;
+      top: -4%;
       right: calc(50% - min(50vw, 39.75rem));
   }
 }
 
 .gallery__contents {
+  width: 100%;
+  cursor: pointer;
   margin-top: rem(40);
   @include mq("md"){
       display: grid;
@@ -73,7 +53,7 @@
 
 .gallery__img:first-child {
   @include mq("md"){
-      aspect-ratio: 746 / 492;
+      // aspect-ratio: 746 / 492;
       grid-column: span 5;
       grid-row: span 2;
   }
@@ -117,37 +97,51 @@
   }
 }
 
-// /* 1枚目の画像に対するスタイル */
-// .gallery__img:first-child.modal__img {
-//   width: 100%; /* 幅を100%に指定 */
-//   height: auto;
-//   object-fit: cover;
-// }
-
-// /* 6枚目の画像に対するスタイル */
-// .gallery__img:nth-child(6).modal__img {
-//   width: 100%; /* 幅を100%に指定 */
-//   height: auto;
-//   object-fit: cover;
-// }
-
-// .gallery__modal.is-open .gallery__img:first-child,
-// .gallery__modal.is-open .gallery__img:nth-child(6) {
-//   width: 5%; /* 例: 幅を80%に縮小 */
-//   max-width: 100%;
-//   height: auto;
-//   object-fit: contain;
-// }
-
-
-.no-scroll {
-  overflow: hidden;
+.gallery__modal {
   position: fixed;
-  width: 100%;
-  height: 100%;
+  z-index: 9999;
   top: 0;
   left: 0;
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  // padding: 40px 20px;
+  transition: opacity 0.3s, visibility 0.3s;
+  opacity: 0;
+  background: rgba(0, 0, 0, 50%);
+}
+
+.gallery__modal.is-open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal__body {
+  // position: relative;
+  display: inline-block;
+  max-width: 90%;  /* モーダルの最大幅を設定 */
+  max-height: 90%;  /* モーダルの最大高さを設定 */
+  overflow: hidden; /* 画像がオーバーフローしないようにする */
+}
+
+.gallery__img.js-modal-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* 画像を縦横比を保ちながら最大限表示 */
 }
 
 
+.modal__close-button {
+  cursor: pointer;
+}
 
+.body-fixed {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}

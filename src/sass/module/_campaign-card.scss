@@ -209,3 +209,13 @@
 .campaign__card-img.campaign__card-img--page img {
   aspect-ratio: 294 / 188;
 }
+
+
+//page-blog
+.campaign__card--page:first-child {
+  margin-top: rem(24);
+}
+
+.campaign__card--page:not(:first-child) {
+  margin-top: rem(20);
+}

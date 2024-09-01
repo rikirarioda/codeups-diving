@@ -37,7 +37,7 @@
 </head>
 <body>
 
-  <header class="header">
+  <header class="header js-header">
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="index.html" class="header__logo-link">
@@ -260,27 +260,30 @@
       <div class="gallery__inner inner">
         <div class="gallery__title">
           <div class="title">
-            <p class="title__main"> Gallery</p>
+            <p class="title__main">Gallery</p>
             <h2 class="title__sub">フォト</h2>
           </div>
         </div>
+
         <div class="gallery__contents js-modal-open">
-            <img src="./assets/images/common/about-p-img0.jpg" alt="サンゴ礁とたくさんの魚が泳いでいる様子" class="gallery__img">
-            <img src="./assets/images/common/about-p-img1.jpg" alt="海と山と船の写真" class="gallery__img">
-            <img src="./assets/images/common/about-p-img2.jpg" alt="海の中で青色と黄色の魚が２尾泳いでいる様子" class="gallery__img">
-            <img src="./assets/images/common/about-p-img3.jpg" alt="黄色い魚が泳いでいる様子" class="gallery__img">
-            <img src="./assets/images/common/about-p-img4.jpg" alt="海の中で大量の魚が泳いでいる様子" class="gallery__img">
-            <img src="./assets/images/common/about-p-img5.jpg" alt="海の中で黄色の魚が泳いでいる様子" class="gallery__img">
+          <img src="./assets/images/common/about-p-img0.jpg" alt="サンゴ礁とたくさんの魚が泳いでいる様子" class="gallery__img js-modal-open" data-img-src="./assets/images/common/about-p-img0.jpg">
+          <img src="./assets/images/common/about-p-img1.jpg" alt="海と山と船の写真" class="gallery__img js-modal-open" data-img-src="./assets/images/common/about-p-img1.jpg">
+          <img src="./assets/images/common/about-p-img2.jpg" alt="海の中で青色と黄色の魚が２尾泳いでいる様子" class="gallery__img js-modal-open" data-img-src="./assets/images/common/about-p-img2.jpg">
+          <img src="./assets/images/common/about-p-img3.jpg" alt="黄色い魚が泳いでいる様子" class="gallery__img js-modal-open" data-img-src="./assets/images/common/about-p-img3.jpg">
+          <img src="./assets/images/common/about-p-img4.jpg" alt="海の中で大量の魚が泳いでいる様子" class="gallery__img js-modal-open" data-img-src="./assets/images/common/about-p-img4.jpg">
+          <img src="./assets/images/common/about-p-img5.jpg" alt="海の中で黄色の魚が泳いでいる様子" class="gallery__img js-modal-open" data-img-src="./assets/images/common/about-p-img5.jpg">
         </div>
+
         <div class="gallery__modal js-modal">
-            <div class="gallery__body">
-              <span class="gallery__close-button js-modal__close">
-                <img src="./assets/images/common/about-p-img0.jpg" alt="サンゴ礁とたくさんの魚が泳いでいる様子" class="modal__img">
-              </span>
-            </div>
+          <div class="modal__body">
+            <!-- <span class="modal__close-button js-modal__close"> -->
+              <img src="#" alt="拡大画像" class="gallery__img js-modal-img">
+            <!-- </span> -->
+          </div>
         </div>
       </div>
     </section>
+
 
 <!-- Contact-top -->
     <section  id="#" class="contact-top layout-contact-top">
@@ -334,7 +337,7 @@
           <div class="footer__left">
             <div class="footer__pc">
               <div class="footer__link footer-link">
-                <a href="page-c.html" class="footer-link__main">
+                <a href="page-campaign.html" class="footer-link__main">
                   <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
                   <p class="footer-link__text">キャンペーン</p>
                 </a>
@@ -358,9 +361,9 @@
                   <p class="footer-link__text">ダイビング情報</p>
                 </a>
                 <div class="footer-link__details">
-                  <a href="page-information.html?tab=ライセンス講習" class="footer-link__detail">ライセンス講習</a>
-                  <a href="page-information.html?tab=体験ダイビング" class="footer-link__detail">体験ダイビング</a>
-                  <a href="page-information.html?tab=ファンダイビング" class="footer-link__detail">ファンダイビング</a>
+                  <a href="page-information.html?tab=license-lecture" class="footer-link__detail">ライセンス講習</a>
+                  <a href="page-information.html?tab=intro-diving" class="footer-link__detail">体験ダイビング</a>
+                  <a href="page-information.html?tab=fun-diving" class="footer-link__detail">ファンダイビング</a>
                 </div>
               </div>
               <div class="footer__link footer-link">
@@ -381,13 +384,15 @@
               </div>
               <div class="footer__link footer-link">
                 <a href="page-price.html" class="footer-link__main">
-                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <div class="footer-link__icon">
+                    <img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン">
+                  </div>
                   <p class="footer-link__text">料金一覧</p>
                 </a>
                 <div class="footer-link__details">
-                  <a href="#" class="footer-link__detail">ライセンス講習</a>
-                  <a href="#" class="footer-link__detail">体験ダイビング</a>
-                  <a href="#" class="footer-link__detail">ファンダイビング</a>
+                  <a href="page-price.html#license-course" class="footer-link__detail">ライセンス講習</a>
+                  <a href="page-price.html#trial-diving" class="footer-link__detail">体験ダイビング</a>
+                  <a href="page-price.html#diving-fun" class="footer-link__detail">ファンダイビング</a>                  
                 </div>
               </div>
             </div>

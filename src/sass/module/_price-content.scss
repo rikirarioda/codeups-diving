@@ -1,0 +1,9 @@
+@use "global" as *;
+
+.price-content {
+  display: grid;
+  gap: rem(40);
+  @include mq("md") {
+    gap: rem(80);
+  }
+}

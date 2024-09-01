@@ -36,7 +36,7 @@
 </head>
 <body>
 
-  <header class="header">
+  <header class="header js-header">
     <div class="header__inner">
       <h1 class="header__logo">
         <a href="index.html" class="header__logo-link">
@@ -227,8 +227,8 @@
     <!-- price -->
     <div class="page-price layout-page-price">
       <div class="page-price__inner inner fish-image">
-        <div class="page-price__container price-tables">
-          <div class="page-price__item price-table">
+        <div class="page-price__container price-content">
+          <div id="license-course" class="price-content__item price-table">
             <div class="price-table__heading">
               <img src="./assets/images/common/Price.svg" alt="ヒトデのアイコン">ライセンス講習
             </div>
@@ -247,7 +247,7 @@
               </tr>
             </table>
           </div>
-          <div class="page-price__item price-table">
+          <div id="trial-diving" class="price-content__item price-table">
             <div class="price-table__heading">
               <img src="./assets/images/common/Price.svg" alt="ヒトデのアイコン">体験ダイビング
             </div>
@@ -270,7 +270,7 @@
               </tr>
             </table>
           </div>
-          <div class="page-price__item price-table">
+          <div id="diving-fun" class="price-content__item price-table">
             <div class="price-table__heading">
               <img src="./assets/images/common/Price.svg" alt="ヒトデのアイコン">ファンダイビング
             </div>
@@ -293,7 +293,7 @@
               </tr>
             </table>
           </div>
-          <div class="page-price__item price-table">
+          <div class="price-content__item price-table">
             <div class="price-table__heading">
               <img src="./assets/images/common/Price.svg" alt="ヒトデのアイコン">スペシャルダイビング
             </div>
@@ -368,7 +368,7 @@
           <div class="footer__left">
             <div class="footer__pc">
               <div class="footer__link footer-link">
-                <a href="page-c.html" class="footer-link__main">
+                <a href="page-campaign.html" class="footer-link__main">
                   <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
                   <p class="footer-link__text">キャンペーン</p>
                 </a>
@@ -392,9 +392,9 @@
                   <p class="footer-link__text">ダイビング情報</p>
                 </a>
                 <div class="footer-link__details">
-                  <a href="page-information.html?tab=ライセンス講習" class="footer-link__detail">ライセンス講習</a>
-                  <a href="page-information.html?tab=体験ダイビング" class="footer-link__detail">体験ダイビング</a>
-                  <a href="page-information.html?tab=ファンダイビング" class="footer-link__detail">ファンダイビング</a>
+                  <a href="page-information.html?tab=license-lecture" class="footer-link__detail">ライセンス講習</a>
+                  <a href="page-information.html?tab=intro-diving" class="footer-link__detail">体験ダイビング</a>
+                  <a href="page-information.html?tab=fun-diving" class="footer-link__detail">ファンダイビング</a>
                 </div>
               </div>
               <div class="footer__link footer-link">
@@ -415,13 +415,15 @@
               </div>
               <div class="footer__link footer-link">
                 <a href="page-price.html" class="footer-link__main">
-                  <div class="footer-link__icon"><img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン"></div>
+                  <div class="footer-link__icon">
+                    <img src="./assets/images/common/hitode.svg" alt="ヒトデのアイコン">
+                  </div>
                   <p class="footer-link__text">料金一覧</p>
                 </a>
                 <div class="footer-link__details">
-                  <a href="#" class="footer-link__detail">ライセンス講習</a>
-                  <a href="#" class="footer-link__detail">体験ダイビング</a>
-                  <a href="#" class="footer-link__detail">ファンダイビング</a>
+                  <a href="page-price.html#license-course" class="footer-link__detail">ライセンス講習</a>
+                  <a href="page-price.html#trial-diving" class="footer-link__detail">体験ダイビング</a>
+                  <a href="page-price.html#diving-fun" class="footer-link__detail">ファンダイビング</a>                  
                 </div>
               </div>
             </div>
