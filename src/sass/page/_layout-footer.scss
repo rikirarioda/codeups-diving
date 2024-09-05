@@ -17,8 +17,10 @@
 
 .layout-footer.layout-page-404--footer {
   padding-top: rem(20);
+  margin-top: rem(0);
 
   @include mq("md") {
   padding-top: rem(45);
+  margin-top: rem(0);
   }
 }

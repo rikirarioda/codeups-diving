@@ -50,7 +50,7 @@
 }
 
 
-//キャンペーン
+//アーカイブ
 .article__archive {
   margin-top: rem(30);
 }
@@ -75,16 +75,10 @@
 }
 
 .article__months {
-  max-height: 0; /* 初期状態で隠す */
+  display: none; /* 初期状態で隠す */
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out; /* トグルの開閉時にアニメーションを適用 */
   padding: 0;  /* 初期状態でのpaddingを0に */
   margin: 0;   /* 初期状態でのmarginを0に */
-  // transition: max-height 0.5s ease; /* 高さのトランジション */
-}
-
-.article__months.open {
-  max-height: 500px; /* 開いたときに十分な高さを設定 */
 }
 
 .article__month {
@@ -94,4 +88,8 @@
 .article__month img {
   width: rem(20);
   margin-right: rem(6);
+}
+
+.js-accordion-title.is-open img {
+  transform: rotate(45deg); /* アイコンが回転するアニメーションを適用（例として45度回転） */
 }

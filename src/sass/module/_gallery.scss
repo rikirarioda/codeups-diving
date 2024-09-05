@@ -145,3 +145,16 @@
   top: 0;
   left: 0;
 }
+
+/* no-scroll クラスを修正 */
+.no-scroll {
+  overflow: hidden;
+  position: fixed; /* 追加: ハンバーガーメニューと同時にスクロール固定を行う */
+  width: 100%; /* スクロールバーの出現による幅の変化を防ぐ */
+}
+
+.body-fixed {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}

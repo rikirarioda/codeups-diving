@@ -26,7 +26,7 @@
   border: 1px solid $green;
   padding: rem(5) rem(0);
   cursor: pointer;
-  width: rem(162); /* 固定幅を設定 */
+  width: 100%;
   box-sizing: border-box; /* パディングを含める */
   margin: 0; /* マージンをリセット */
 }
@@ -39,9 +39,21 @@
   border: 1px solid $green;
   padding: rem(5) rem(0);
   cursor: pointer;
-  width: rem(162); /* 固定幅を設定 */
+  width: 100%;
   box-sizing: border-box; /* パディングを含める */
 }
+
+// .category-button__tab.is-active {
+//   color: $white;
+//   background: $green;
+//   // transition: .3s ease-in-out;
+// }
+
+// .category-button__tab:hover {
+//   color: $white;
+//   background: $green;
+//   // transition: .3s ease-in-out;
+// }
 
 .category-button__tab.is-active {
   color: $white;
@@ -49,10 +61,18 @@
   // transition: .3s ease-in-out;
 }
 
-.category-button__tab:hover {
+// 他のタブのホバー時のスタイルを維持
+.category-button__tab:not(:first-child):hover {
   color: $white;
   background: $green;
-  // transition: .3s ease-in-out;
+}
+
+// ALLタブ専用のスタイル
+.category-button__tab.js-tab-button:first-child {
+  color: $white;
+  background: $green;
+  border: 1px solid $green;
+  pointer-events: none;  // クリックを無効にする（オプション）
 }
 
 

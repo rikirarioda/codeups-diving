@@ -36,21 +36,6 @@
 </head>
 <body>
 
-  <!-- アーカイブトグル -->
-<script>
-  function toggleMonths(yearId) {
-    const element = document.getElementById(yearId);
-    const img = element.previousElementSibling.querySelector('img');
-    if (element.classList.contains('open')) {
-      element.classList.remove('open');
-      img.src = "./assets/images/common/blog-p-archive2.svg"; // 閉じた状態のアイコン
-    } else {
-      element.classList.add('open');
-      img.src = "./assets/images/common/blog-p-archive1.svg"; // 開いた状態のアイコン
-    }
-  }
-</script>
-
   <header class="header js-header">
     <div class="header__inner">
       <h1 class="header__logo">
@@ -297,12 +282,11 @@
       <div class="article__content">
         <div class="article__wrap label">
           <div class="label__title">
-            <img src="./assets/images/common/Blog-p-icon.svg" alt="クジラのアイコン">
             <h2>人気記事</h2>
           </div>
         </div>
         <div class="article__reviews">
-          <ul class="article__contents article-cards">
+          <ul class="article-cards">
             <li class="article-cards__card article-card">
               <a href="page-blog-detail.html" class="article-card__link">
                 <div class="article-card__list">
@@ -350,7 +334,6 @@
       <div class="article__content">
         <div class="article__wrap label">
           <div class="label__title">
-            <img src="./assets/images/common/Blog-p-icon.svg" alt="クジラのアイコン">
             <h2>口コミ</h2>
           </div>
         </div>
@@ -372,7 +355,6 @@
       <div class="article__content">
         <div class="article__wrap label">
           <div class="label__title">
-            <img src="./assets/images/common/Blog-p-icon.svg" alt="クジラのアイコン">
             <h2>キャンペーン</h2>
           </div>
         </div>
@@ -426,17 +408,16 @@
       <div class="article__content">
         <div class="article__wrap label">
           <div class="label__title">
-            <img src="./assets/images/common/Blog-p-icon.svg" alt="クジラのアイコン">
             <h2>アーカイブ</h2>
           </div>
         </div>
         <div class="article__archive">
           <div class="article__date-wrapper">
-            <a href="#" class="article__date" onclick="toggleMonths('year-2023')">
+            <div class="article__date js-accordion-list is-open">
               <img src="./assets/images/common/blog-p-archive1.svg" alt="">
               2023
-            </a>
-            <div class="article__months open" id="year-2023"> <!-- openクラスを追加 -->
+            </div>
+            <div class="article__months open" style="display: block;">
               <a href="#" class="article__month">
                 <img src="./assets/images/common/blog-p-archive2.svg" alt="">
                 3月
@@ -452,11 +433,11 @@
             </div>
           </div>
           <div class="article__date-wrapper">
-            <a href="#" class="article__date" onclick="toggleMonths('year-2022')">
+            <div class="article__date js-accordion-list">
               <img src="./assets/images/common/blog-p-archive2.svg" alt="">
               2022
-            </a>
-            <div class="article__months" id="year-2022">
+            </div>
+            <div class="article__months">
               <a href="#" class="article__month">
                 <img src="./assets/images/common/blog-p-archive2.svg" alt="">
                 3月
@@ -472,6 +453,7 @@
             </div>
           </div>
         </div>
+        
       </div>
     </aside>
         </div>

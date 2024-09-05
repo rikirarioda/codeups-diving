@@ -9,13 +9,23 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
 
     // ウィンドウのリサイズイベント
+    // $(window).resize(function () {
+    //   if ($(window).width() >= 768) {
+    //     // 画面幅が768px以上の場合はドロワーメニューを非表示にし、ハンバーガーアイコンの状態をリセット
+    //     $(".js-drawer").hide();
+    //     $(".js-hamburger").removeClass("is-active");
+    //   }
+    // }).trigger('resize'); // 初回ロード時にもリサイズイベントをトリガー
     $(window).resize(function () {
       if ($(window).width() >= 768) {
-        // 画面幅が768px以上の場合はドロワーメニューを非表示にし、ハンバーガーアイコンの状態をリセット
-        $(".js-drawer").hide();
-        $(".js-hamburger").removeClass("is-active");
+        if (!$('.js-hamburger').hasClass('is-active')) {
+          $(".js-drawer").hide();
+          $(".js-hamburger").removeClass("is-active");
+          $("body").removeClass("no-scroll"); // no-scroll クラスをリセット
+        }
       }
-    }).trigger('resize'); // 初回ロード時にもリサイズイベントをトリガー
+    }).trigger('resize');
+    
   });
 
 //ハンバーガー開いている時背景スクロールしない
@@ -126,11 +136,11 @@ $(document).ready(function() {
 });
 
 
-//campaign-page タブ
+
 //information-page タブ
 $(function () {
-  const tabButton = $(".js-tab-button"),
-    tabContent = $(".js-tab-content");
+  const tabButton = $(".js-tab-list"),
+    tabContent = $(".js-information-tab-content");
   tabButton.on("click", function () {
     let index = tabButton.index(this);
 
@@ -141,55 +151,29 @@ $(function () {
   });
 });
 
+//campaign-page タブ
+$(function () {
+  const tabButton = $(".js-tab-button"),
+    tabContent = $(".js-tab-content");
+
+  tabButton.on("click", function () {
+    let index = tabButton.index(this);
+
+    // ALLタブ以外のタブがクリックされた場合
+    if (index !== 0) {
+      tabButton.removeClass("is-active");
+      tabButton.eq(0).addClass("is-active"); // ALLタブに常にis-activeクラスを保持
+      $(this).addClass("is-active");
+    }
+
+    tabContent.removeClass("is-active");
+    tabContent.eq(index).addClass("is-active");
+  });
+});
+
+
 
 //モーダル
-
-// $(function () {
-//   const open = $(".js-modal-open"),
-//         close = $(".js-modal__close"),
-//         modal = $(".js-modal"),
-//         modalImg = $(".js-modal-img"),
-//         body = $("body");
-
-//   let scrollPosition = 0;  // スクロール位置を保持する変数
-
-//   open.on("click", function () {
-//     scrollPosition = $(window).scrollTop();  // 現在のスクロール位置を保存
-//     const imgSrc = $(this).data("img-src");  // クリックされた画像のsrcを取得
-//     modalImg.attr("src", imgSrc);  // モーダル内の画像srcを更新
-
-//     // モーダル内の画像サイズをウィンドウサイズに応じて調整
-//     const windowHeight = $(window).height();
-//     const windowWidth = $(window).width();
-//     modalImg.css({
-//       'max-height': windowHeight * 0.9 + 'px',  // ウィンドウ高さの90%に制限
-//       'max-width': windowWidth * 0.9 + 'px'    // ウィンドウ幅の90%に制限
-//     });
-
-//     modal.addClass("is-open");  // モーダルを開く
-
-//     // 背景スクロールを無効化
-//     body.css({
-//       overflow: 'hidden',
-//       position: 'relative',
-//       top: -scrollPosition + 'px'
-//     });
-//   });
-
-//   close.add(modal).on("click", function () {
-//     modal.removeClass("is-open");  // モーダルを閉じる
-
-//     // 背景スクロールを有効化し、スクロール位置を元に戻す
-//     body.css({
-//       overflow: '',
-//       position: '',
-//       top: ''
-//     });
-//     $(window).scrollTop(scrollPosition);  // 元のスクロール位置に戻す
-//   });
-  
-// });
-
 $(function () {
   const open = $(".js-modal-open"),
         close = $(".js-modal-close"),
@@ -197,28 +181,22 @@ $(function () {
         modalImg = $(".js-modal-img"),
         body = $("body");
 
-  let scrollPosition = 0;  // スクロール位置を保持する変数
+  let scrollPosition = 0;
 
   open.on("click", function () {
     scrollPosition = $(window).scrollTop();  // 現在のスクロール位置を保存
     const imgSrc = $(this).data("img-src");  // クリックされた画像のsrcを取得
     modalImg.attr("src", imgSrc);  // モーダル内の画像srcを更新
 
-    // モーダル内の画像サイズをウィンドウサイズに応じて調整
-    const windowHeight = $(window).height();
-    const windowWidth = $(window).width();
-    modalImg.css({
-      'max-height': windowHeight * 0.9 + 'px',  // ウィンドウ高さの90%に制限
-      'max-width': windowWidth * 0.9 + 'px'    // ウィンドウ幅の90%に制限
-    });
-
     modal.addClass("is-open");  // モーダルを開く
 
-    // 背景スクロールを無効化
+    // スクロールを無効化し、背景を固定
     body.css({
       overflow: 'hidden',
       position: 'relative',
-      top: -scrollPosition + 'px'
+      // height: '100vh',  // ビューポートの高さに固定　
+      // top: -scrollPosition + 'px',　//モーダル開いた時の高さTOP削除
+      width: '100%',
     });
   });
 
@@ -229,25 +207,33 @@ $(function () {
     body.css({
       overflow: '',
       position: '',
-      top: ''
+      top: '',
+      height: '',
+      width: '',
     });
-    $(window).scrollTop(scrollPosition);  // 元のスクロール位置に戻す
+
+    // スクロール位置を復元
+    $(window).scrollTop(scrollPosition);
   });
 
-  // 追加部分: モーダルをクリックして閉じる処理
+  // モーダルの外側をクリックして閉じる処理
   modal.on("click", function (e) {
-    if (e.target === modal[0]) {  // モーダルの外側をクリックしたかどうかをチェック
+    if (e.target === modal[0]) {
       modal.removeClass("is-open");
+
       body.css({
         overflow: '',
         position: '',
-        top: ''
+        top: '',
+        height: '',
+        width: '',
       });
-      $(window).scrollTop(scrollPosition);  // 元のスクロール位置に戻す
+
+      // スクロール位置を復元
+      $(window).scrollTop(scrollPosition);
     }
   });
 });
-
 
 
 
@@ -258,6 +244,27 @@ $(function () {
     $(this).next().slideToggle(300);
   });
 });
+
+//アーカイブアコーディオン
+$(function () {
+  $(".js-accordion-list").on("click", function () {
+    // トグルの開閉状態を切り替え
+    $(this).toggleClass("is-open");
+    
+    // クリックされた要素の次の要素（.article__months）をスライド
+    $(this).next(".article__months").slideToggle(300);
+    
+    // アイコンの変更
+    const img = $(this).find("img");
+    if ($(this).hasClass("is-open")) {
+      img.attr("src", "./assets/images/common/blog-p-archive1.svg"); // 開いた状態のアイコン
+    } else {
+      img.attr("src", "./assets/images/common/blog-p-archive2.svg"); // 閉じた状態のアイコン
+    }
+  });
+});
+
+
 
 
 
@@ -317,6 +324,7 @@ function validateForm(event) {
 
 
 //インフォメーションページ　パラメータ
+
 $(function () {
   // URLからクエリパラメータを取得する関数
   function getQueryParam(param) {
@@ -327,16 +335,34 @@ $(function () {
   // URLのパラメータから対応するIDを取得
   const tabId = getQueryParam('tab');
 
+  const tabButton = $(".js-tab-list"),
+        tabContent = $(".js-information-tab-content");
+
   // パラメータに対応するタブボタンが存在するかチェック
   if (tabId) {
     // すべてのタブとコンテンツからアクティブクラスを削除
-    $('.js-tab-button').removeClass('is-active');
-    $('.js-tab-content').removeClass('is-active');
+    tabButton.removeClass('is-active');
+    tabContent.removeClass('is-active');
 
     // 対応するタブボタンとコンテンツにアクティブクラスを追加
-    $('#' + tabId).addClass('is-active');
-    $('#' + tabId).closest('.tab__list').next('.tab__contents').find('.js-tab-content').eq($('#' + tabId).index()).addClass('is-active');
+    const targetTab = $("#" + tabId);
+    const targetIndex = tabButton.index(targetTab);
+
+    if (targetIndex !== -1) {
+      targetTab.addClass('is-active');
+      tabContent.eq(targetIndex).addClass('is-active');
+    }
   }
+
+  // タブクリック時の動作
+  tabButton.on("click", function () {
+    let index = tabButton.index(this);
+
+    tabButton.removeClass("is-active");
+    $(this).addClass("is-active");
+    tabContent.removeClass("is-active");
+    tabContent.eq(index).addClass("is-active");
+  });
 });
 
 
