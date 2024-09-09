@@ -174,6 +174,67 @@ $(function () {
 
 
 //モーダル
+// $(function () {
+//   const open = $(".js-modal-open"),
+//         close = $(".js-modal-close"),
+//         modal = $(".js-modal"),
+//         modalImg = $(".js-modal-img"),
+//         body = $("body");
+
+//   let scrollPosition = 0;
+
+//   open.on("click", function () {
+//     scrollPosition = $(window).scrollTop();  // 現在のスクロール位置を保存
+//     const imgSrc = $(this).data("img-src");  // クリックされた画像のsrcを取得
+//     modalImg.attr("src", imgSrc);  // モーダル内の画像srcを更新
+
+//     modal.addClass("is-open");  // モーダルを開く
+
+//     // スクロールを無効化し、背景を固定
+//     body.css({
+//       overflow: 'hidden',
+//       position: 'relative',
+//       // height: '100vh',  // ビューポートの高さに固定　
+//       // top: -scrollPosition + 'px',　//モーダル開いた時の高さTOP削除
+//       width: '100%',
+//     });
+//   });
+
+//   close.add(modal).on("click", function () {
+//     modal.removeClass("is-open");  // モーダルを閉じる
+
+//     // 背景スクロールを有効化し、スクロール位置を元に戻す
+//     body.css({
+//       overflow: '',
+//       position: '',
+//       top: '',
+//       height: '',
+//       width: '',
+//     });
+
+//     // スクロール位置を復元
+//     $(window).scrollTop(scrollPosition);
+//   });
+
+//   // モーダルの外側をクリックして閉じる処理
+//   modal.on("click", function (e) {
+//     if (e.target === modal[0]) {
+//       modal.removeClass("is-open");
+
+//       body.css({
+//         overflow: '',
+//         position: '',
+//         top: '',
+//         height: '',
+//         width: '',
+//       });
+
+//       // スクロール位置を復元
+//       $(window).scrollTop(scrollPosition);
+//     }
+//   });
+// });
+
 $(function () {
   const open = $(".js-modal-open"),
         close = $(".js-modal-close"),
@@ -188,14 +249,15 @@ $(function () {
     const imgSrc = $(this).data("img-src");  // クリックされた画像のsrcを取得
     modalImg.attr("src", imgSrc);  // モーダル内の画像srcを更新
 
+    // ウィンドウサイズの90%以内に画像を収める
+    adjustImageSize();
+
     modal.addClass("is-open");  // モーダルを開く
 
     // スクロールを無効化し、背景を固定
     body.css({
       overflow: 'hidden',
       position: 'relative',
-      // height: '100vh',  // ビューポートの高さに固定　
-      // top: -scrollPosition + 'px',　//モーダル開いた時の高さTOP削除
       width: '100%',
     });
   });
@@ -233,7 +295,42 @@ $(function () {
       $(window).scrollTop(scrollPosition);
     }
   });
+
+  // ウィンドウサイズに合わせて画像を調整する関数
+  function adjustImageSize() {
+    const windowWidth = $(window).width();  // ウィンドウの幅
+    const windowHeight = $(window).height();  // ウィンドウの高さ
+
+    // 画像の最大幅と最大高さを90%に設定
+    const maxWidth = windowWidth * 0.9;
+    const maxHeight = windowHeight * 0.9;
+
+    // 画像の自然サイズを取得
+    const naturalWidth = modalImg[0].naturalWidth;
+    const naturalHeight = modalImg[0].naturalHeight;
+
+    // 画像の比率を保ちつつサイズを調整
+    if (naturalWidth / naturalHeight > maxWidth / maxHeight) {
+      modalImg.css({
+        width: maxWidth + 'px',
+        height: 'auto',
+      });
+    } else {
+      modalImg.css({
+        width: 'auto',
+        height: maxHeight + 'px',
+      });
+    }
+  }
+
+  // ウィンドウのサイズが変更されたときにも画像を再調整
+  $(window).on("resize", function () {
+    if (modal.hasClass("is-open")) {
+      adjustImageSize();
+    }
+  });
 });
+
 
 
 
